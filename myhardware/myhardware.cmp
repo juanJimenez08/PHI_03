@@ -1,0 +1,14 @@
+	component myhardware is
+		port (
+			clk_clk       : in  std_logic                    := 'X'; -- clk
+			hex0_export   : out std_logic_vector(6 downto 0);        -- export
+			hex1_export   : out std_logic_vector(6 downto 0);        -- export
+			hex2_export   : out std_logic_vector(6 downto 0);        -- export
+			hex3_export   : out std_logic_vector(6 downto 0);        -- export
+			hex4_export   : out std_logic_vector(6 downto 0);        -- export
+			hex5_export   : out std_logic_vector(6 downto 0);        -- export
+			leds_export   : out std_logic_vector(9 downto 0);        -- export
+			reset_reset_n : in  std_logic                    := 'X'  -- reset_n
+		);
+	end component myhardware;
+

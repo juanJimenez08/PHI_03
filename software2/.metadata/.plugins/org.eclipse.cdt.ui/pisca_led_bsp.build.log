@@ -1,0 +1,8 @@
+16:59:58 **** Build of configuration Nios II for project pisca_led_bsp ****
+wsl make all 
+make: Warning: File 'obj/drivers/src/altera_avalon_sysid_qsys.d' has modification time 5.5 s in the future
+[BSP build complete]
+make: warning:  Clock skew detected.  Your build may be incomplete.
+
+16:59:59 Build Finished (took 1s.609ms)
+
