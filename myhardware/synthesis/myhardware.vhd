@@ -118,6 +118,19 @@ architecture rtl of myhardware is
 		);
 	end component myhardware_sysid_qsys_0;
 
+	component myhardware_timer_0 is
+		port (
+			clk        : in  std_logic                     := 'X';             -- clk
+			reset_n    : in  std_logic                     := 'X';             -- reset_n
+			address    : in  std_logic_vector(2 downto 0)  := (others => 'X'); -- address
+			writedata  : in  std_logic_vector(15 downto 0) := (others => 'X'); -- writedata
+			readdata   : out std_logic_vector(15 downto 0);                    -- readdata
+			chipselect : in  std_logic                     := 'X';             -- chipselect
+			write_n    : in  std_logic                     := 'X';             -- write_n
+			irq        : out std_logic                                         -- irq
+		);
+	end component myhardware_timer_0;
+
 	component myhardware_mm_interconnect_0 is
 		port (
 			clk_0_clk_clk                                  : in  std_logic                     := 'X';             -- clk
@@ -192,7 +205,12 @@ architecture rtl of myhardware is
 			onchip_memory2_0_s1_chipselect                 : out std_logic;                                        -- chipselect
 			onchip_memory2_0_s1_clken                      : out std_logic;                                        -- clken
 			sysid_qsys_0_control_slave_address             : out std_logic_vector(0 downto 0);                     -- address
-			sysid_qsys_0_control_slave_readdata            : in  std_logic_vector(31 downto 0) := (others => 'X')  -- readdata
+			sysid_qsys_0_control_slave_readdata            : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
+			timer_0_s1_address                             : out std_logic_vector(2 downto 0);                     -- address
+			timer_0_s1_write                               : out std_logic;                                        -- write
+			timer_0_s1_readdata                            : in  std_logic_vector(15 downto 0) := (others => 'X'); -- readdata
+			timer_0_s1_writedata                           : out std_logic_vector(15 downto 0);                    -- writedata
+			timer_0_s1_chipselect                          : out std_logic                                         -- chipselect
 		);
 	end component myhardware_mm_interconnect_0;
 
@@ -201,6 +219,7 @@ architecture rtl of myhardware is
 			clk           : in  std_logic                     := 'X'; -- clk
 			reset         : in  std_logic                     := 'X'; -- reset
 			receiver0_irq : in  std_logic                     := 'X'; -- irq
+			receiver1_irq : in  std_logic                     := 'X'; -- irq
 			sender_irq    : out std_logic_vector(31 downto 0)         -- irq
 		);
 	end component myhardware_irq_mapper;
@@ -342,7 +361,13 @@ architecture rtl of myhardware is
 	signal mm_interconnect_0_hex_5_s1_address                              : std_logic_vector(1 downto 0);  -- mm_interconnect_0:HEX_5_s1_address -> HEX_5:address
 	signal mm_interconnect_0_hex_5_s1_write                                : std_logic;                     -- mm_interconnect_0:HEX_5_s1_write -> mm_interconnect_0_hex_5_s1_write:in
 	signal mm_interconnect_0_hex_5_s1_writedata                            : std_logic_vector(31 downto 0); -- mm_interconnect_0:HEX_5_s1_writedata -> HEX_5:writedata
+	signal mm_interconnect_0_timer_0_s1_chipselect                         : std_logic;                     -- mm_interconnect_0:timer_0_s1_chipselect -> timer_0:chipselect
+	signal mm_interconnect_0_timer_0_s1_readdata                           : std_logic_vector(15 downto 0); -- timer_0:readdata -> mm_interconnect_0:timer_0_s1_readdata
+	signal mm_interconnect_0_timer_0_s1_address                            : std_logic_vector(2 downto 0);  -- mm_interconnect_0:timer_0_s1_address -> timer_0:address
+	signal mm_interconnect_0_timer_0_s1_write                              : std_logic;                     -- mm_interconnect_0:timer_0_s1_write -> mm_interconnect_0_timer_0_s1_write:in
+	signal mm_interconnect_0_timer_0_s1_writedata                          : std_logic_vector(15 downto 0); -- mm_interconnect_0:timer_0_s1_writedata -> timer_0:writedata
 	signal irq_mapper_receiver0_irq                                        : std_logic;                     -- jtag_uart_0:av_irq -> irq_mapper:receiver0_irq
+	signal irq_mapper_receiver1_irq                                        : std_logic;                     -- timer_0:irq -> irq_mapper:receiver1_irq
 	signal nios2_gen2_0_irq_irq                                            : std_logic_vector(31 downto 0); -- irq_mapper:sender_irq -> nios2_gen2_0:irq
 	signal rst_controller_reset_out_reset                                  : std_logic;                     -- rst_controller:reset_out -> [irq_mapper:reset, mm_interconnect_0:nios2_gen2_0_reset_reset_bridge_in_reset_reset, onchip_memory2_0:reset, rst_controller_reset_out_reset:in, rst_translator:in_reset]
 	signal rst_controller_reset_out_reset_req                              : std_logic;                     -- rst_controller:reset_req -> [nios2_gen2_0:reset_req, onchip_memory2_0:reset_req, rst_translator:reset_req_in]
@@ -357,7 +382,8 @@ architecture rtl of myhardware is
 	signal mm_interconnect_0_hex_3_s1_write_ports_inv                      : std_logic;                     -- mm_interconnect_0_hex_3_s1_write:inv -> HEX_3:write_n
 	signal mm_interconnect_0_hex_4_s1_write_ports_inv                      : std_logic;                     -- mm_interconnect_0_hex_4_s1_write:inv -> HEX_4:write_n
 	signal mm_interconnect_0_hex_5_s1_write_ports_inv                      : std_logic;                     -- mm_interconnect_0_hex_5_s1_write:inv -> HEX_5:write_n
-	signal rst_controller_reset_out_reset_ports_inv                        : std_logic;                     -- rst_controller_reset_out_reset:inv -> [HEX_0:reset_n, HEX_1:reset_n, HEX_2:reset_n, HEX_3:reset_n, HEX_4:reset_n, HEX_5:reset_n, LEDS:reset_n, jtag_uart_0:rst_n, nios2_gen2_0:reset_n, sysid_qsys_0:reset_n]
+	signal mm_interconnect_0_timer_0_s1_write_ports_inv                    : std_logic;                     -- mm_interconnect_0_timer_0_s1_write:inv -> timer_0:write_n
+	signal rst_controller_reset_out_reset_ports_inv                        : std_logic;                     -- rst_controller_reset_out_reset:inv -> [HEX_0:reset_n, HEX_1:reset_n, HEX_2:reset_n, HEX_3:reset_n, HEX_4:reset_n, HEX_5:reset_n, LEDS:reset_n, jtag_uart_0:rst_n, nios2_gen2_0:reset_n, sysid_qsys_0:reset_n, timer_0:reset_n]
 
 begin
 
@@ -512,6 +538,18 @@ begin
 			address  => mm_interconnect_0_sysid_qsys_0_control_slave_address(0)  --              .address
 		);
 
+	timer_0 : component myhardware_timer_0
+		port map (
+			clk        => clk_clk,                                      --   clk.clk
+			reset_n    => rst_controller_reset_out_reset_ports_inv,     -- reset.reset_n
+			address    => mm_interconnect_0_timer_0_s1_address,         --    s1.address
+			writedata  => mm_interconnect_0_timer_0_s1_writedata,       --      .writedata
+			readdata   => mm_interconnect_0_timer_0_s1_readdata,        --      .readdata
+			chipselect => mm_interconnect_0_timer_0_s1_chipselect,      --      .chipselect
+			write_n    => mm_interconnect_0_timer_0_s1_write_ports_inv, --      .write_n
+			irq        => irq_mapper_receiver1_irq                      --   irq.irq
+		);
+
 	mm_interconnect_0 : component myhardware_mm_interconnect_0
 		port map (
 			clk_0_clk_clk                                  => clk_clk,                                                     --                                clk_0_clk.clk
@@ -586,7 +624,12 @@ begin
 			onchip_memory2_0_s1_chipselect                 => mm_interconnect_0_onchip_memory2_0_s1_chipselect,            --                                         .chipselect
 			onchip_memory2_0_s1_clken                      => mm_interconnect_0_onchip_memory2_0_s1_clken,                 --                                         .clken
 			sysid_qsys_0_control_slave_address             => mm_interconnect_0_sysid_qsys_0_control_slave_address,        --               sysid_qsys_0_control_slave.address
-			sysid_qsys_0_control_slave_readdata            => mm_interconnect_0_sysid_qsys_0_control_slave_readdata        --                                         .readdata
+			sysid_qsys_0_control_slave_readdata            => mm_interconnect_0_sysid_qsys_0_control_slave_readdata,       --                                         .readdata
+			timer_0_s1_address                             => mm_interconnect_0_timer_0_s1_address,                        --                               timer_0_s1.address
+			timer_0_s1_write                               => mm_interconnect_0_timer_0_s1_write,                          --                                         .write
+			timer_0_s1_readdata                            => mm_interconnect_0_timer_0_s1_readdata,                       --                                         .readdata
+			timer_0_s1_writedata                           => mm_interconnect_0_timer_0_s1_writedata,                      --                                         .writedata
+			timer_0_s1_chipselect                          => mm_interconnect_0_timer_0_s1_chipselect                      --                                         .chipselect
 		);
 
 	irq_mapper : component myhardware_irq_mapper
@@ -594,6 +637,7 @@ begin
 			clk           => clk_clk,                        --       clk.clk
 			reset         => rst_controller_reset_out_reset, -- clk_reset.reset
 			receiver0_irq => irq_mapper_receiver0_irq,       -- receiver0.irq
+			receiver1_irq => irq_mapper_receiver1_irq,       -- receiver1.irq
 			sender_irq    => nios2_gen2_0_irq_irq            --    sender.irq
 		);
 
@@ -681,6 +725,8 @@ begin
 	mm_interconnect_0_hex_4_s1_write_ports_inv <= not mm_interconnect_0_hex_4_s1_write;
 
 	mm_interconnect_0_hex_5_s1_write_ports_inv <= not mm_interconnect_0_hex_5_s1_write;
+
+	mm_interconnect_0_timer_0_s1_write_ports_inv <= not mm_interconnect_0_timer_0_s1_write;
 
 	rst_controller_reset_out_reset_ports_inv <= not rst_controller_reset_out_reset;
 

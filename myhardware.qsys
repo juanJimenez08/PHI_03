@@ -6,7 +6,7 @@
    version="1.0"
    description=""
    tags=""
-   categories="" />
+   categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
    element HEX_0
@@ -21,7 +21,7 @@
    {
       datum baseAddress
       {
-         value = "69712";
+         value = "69744";
          type = "String";
       }
    }
@@ -37,7 +37,7 @@
    {
       datum baseAddress
       {
-         value = "69696";
+         value = "69728";
          type = "String";
       }
    }
@@ -53,7 +53,7 @@
    {
       datum baseAddress
       {
-         value = "69680";
+         value = "69712";
          type = "String";
       }
    }
@@ -69,7 +69,7 @@
    {
       datum baseAddress
       {
-         value = "69664";
+         value = "69696";
          type = "String";
       }
    }
@@ -85,7 +85,7 @@
    {
       datum baseAddress
       {
-         value = "69648";
+         value = "69680";
          type = "String";
       }
    }
@@ -101,7 +101,7 @@
    {
       datum baseAddress
       {
-         value = "69632";
+         value = "69664";
          type = "String";
       }
    }
@@ -125,7 +125,7 @@
    {
       datum baseAddress
       {
-         value = "69728";
+         value = "69760";
          type = "String";
       }
    }
@@ -149,7 +149,7 @@
    {
       datum baseAddress
       {
-         value = "69752";
+         value = "69784";
          type = "String";
       }
    }
@@ -197,7 +197,23 @@
    {
       datum baseAddress
       {
-         value = "69744";
+         value = "69776";
+         type = "String";
+      }
+   }
+   element timer_0
+   {
+      datum _sortIndex
+      {
+         value = "12";
+         type = "int";
+      }
+   }
+   element timer_0.s1
+   {
+      datum baseAddress
+      {
+         value = "69632";
          type = "String";
       }
    }
@@ -215,7 +231,7 @@
  <parameter name="hideFromIPCatalog" value="false" />
  <parameter name="lockedInterfaceDefinition" value="" />
  <parameter name="maxAdditionalLatency" value="1" />
- <parameter name="projectName" value="" />
+ <parameter name="projectName" value="hardware.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="0" />
  <parameter name="testBenchDutName" value="" />
@@ -406,7 +422,7 @@
   <parameter name="dataAddrWidth" value="17" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x8000' end='0xCE20' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x10800' end='0x11000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='HEX_5.s1' start='0x11000' end='0x11010' type='altera_avalon_pio.s1' /><slave name='HEX_4.s1' start='0x11010' end='0x11020' type='altera_avalon_pio.s1' /><slave name='HEX_3.s1' start='0x11020' end='0x11030' type='altera_avalon_pio.s1' /><slave name='HEX_2.s1' start='0x11030' end='0x11040' type='altera_avalon_pio.s1' /><slave name='HEX_1.s1' start='0x11040' end='0x11050' type='altera_avalon_pio.s1' /><slave name='HEX_0.s1' start='0x11050' end='0x11060' type='altera_avalon_pio.s1' /><slave name='LEDS.s1' start='0x11060' end='0x11070' type='altera_avalon_pio.s1' /><slave name='sysid_qsys_0.control_slave' start='0x11070' end='0x11078' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x11078' end='0x11080' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x8000' end='0xCE20' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x10800' end='0x11000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='timer_0.s1' start='0x11000' end='0x11020' type='altera_avalon_timer.s1' /><slave name='HEX_5.s1' start='0x11020' end='0x11030' type='altera_avalon_pio.s1' /><slave name='HEX_4.s1' start='0x11030' end='0x11040' type='altera_avalon_pio.s1' /><slave name='HEX_3.s1' start='0x11040' end='0x11050' type='altera_avalon_pio.s1' /><slave name='HEX_2.s1' start='0x11050' end='0x11060' type='altera_avalon_pio.s1' /><slave name='HEX_1.s1' start='0x11060' end='0x11070' type='altera_avalon_pio.s1' /><slave name='HEX_0.s1' start='0x11070' end='0x11080' type='altera_avalon_pio.s1' /><slave name='LEDS.s1' start='0x11080' end='0x11090' type='altera_avalon_pio.s1' /><slave name='sysid_qsys_0.control_slave' start='0x11090' end='0x11098' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x11098' end='0x110A0' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -452,7 +468,7 @@
   <parameter name="instruction_master_high_performance_paddr_size" value="0" />
   <parameter name="instruction_master_paddr_base" value="0" />
   <parameter name="instruction_master_paddr_size" value="0" />
-  <parameter name="internalIrqMaskSystemInfo" value="1" />
+  <parameter name="internalIrqMaskSystemInfo" value="3" />
   <parameter name="io_regionbase" value="0" />
   <parameter name="io_regionsize" value="0" />
   <parameter name="master_addr_map" value="false" />
@@ -603,13 +619,25 @@
    enabled="1">
   <parameter name="id" value="0" />
  </module>
+ <module name="timer_0" kind="altera_avalon_timer" version="23.1" enabled="1">
+  <parameter name="alwaysRun" value="false" />
+  <parameter name="counterSize" value="32" />
+  <parameter name="fixedPeriod" value="false" />
+  <parameter name="period" value="1" />
+  <parameter name="periodUnits" value="MSEC" />
+  <parameter name="resetOutput" value="false" />
+  <parameter name="snapshot" value="true" />
+  <parameter name="systemFrequency" value="50000000" />
+  <parameter name="timeoutPulseOutput" value="false" />
+  <parameter name="watchdogPulse" value="2" />
+ </module>
  <connection
    kind="avalon"
    version="23.1"
    start="nios2_gen2_0.data_master"
    end="jtag_uart_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00011078" />
+  <parameter name="baseAddress" value="0x00011098" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -618,7 +646,7 @@
    start="nios2_gen2_0.data_master"
    end="sysid_qsys_0.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00011070" />
+  <parameter name="baseAddress" value="0x00011090" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -645,7 +673,7 @@
    start="nios2_gen2_0.data_master"
    end="LEDS.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00011060" />
+  <parameter name="baseAddress" value="0x00011080" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -654,7 +682,7 @@
    start="nios2_gen2_0.data_master"
    end="HEX_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00011050" />
+  <parameter name="baseAddress" value="0x00011070" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -663,7 +691,7 @@
    start="nios2_gen2_0.data_master"
    end="HEX_1.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00011040" />
+  <parameter name="baseAddress" value="0x00011060" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -672,7 +700,7 @@
    start="nios2_gen2_0.data_master"
    end="HEX_2.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00011030" />
+  <parameter name="baseAddress" value="0x00011050" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -681,7 +709,7 @@
    start="nios2_gen2_0.data_master"
    end="HEX_3.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00011020" />
+  <parameter name="baseAddress" value="0x00011040" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -690,7 +718,7 @@
    start="nios2_gen2_0.data_master"
    end="HEX_4.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00011010" />
+  <parameter name="baseAddress" value="0x00011030" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -698,6 +726,15 @@
    version="23.1"
    start="nios2_gen2_0.data_master"
    end="HEX_5.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00011020" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="23.1"
+   start="nios2_gen2_0.data_master"
+   end="timer_0.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x00011000" />
   <parameter name="defaultConnection" value="false" />
@@ -730,6 +767,7 @@
  <connection kind="clock" version="23.1" start="clk_0.clk" end="HEX_3.clk" />
  <connection kind="clock" version="23.1" start="clk_0.clk" end="HEX_4.clk" />
  <connection kind="clock" version="23.1" start="clk_0.clk" end="HEX_5.clk" />
+ <connection kind="clock" version="23.1" start="clk_0.clk" end="timer_0.clk" />
  <connection
    kind="clock"
    version="23.1"
@@ -741,6 +779,13 @@
    start="nios2_gen2_0.irq"
    end="jtag_uart_0.irq">
   <parameter name="irqNumber" value="0" />
+ </connection>
+ <connection
+   kind="interrupt"
+   version="23.1"
+   start="nios2_gen2_0.irq"
+   end="timer_0.irq">
+  <parameter name="irqNumber" value="1" />
  </connection>
  <connection
    kind="reset"
@@ -764,6 +809,11 @@
  <connection kind="reset" version="23.1" start="clk_0.clk_reset" end="HEX_3.reset" />
  <connection kind="reset" version="23.1" start="clk_0.clk_reset" end="HEX_4.reset" />
  <connection kind="reset" version="23.1" start="clk_0.clk_reset" end="HEX_5.reset" />
+ <connection
+   kind="reset"
+   version="23.1"
+   start="clk_0.clk_reset"
+   end="timer_0.reset" />
  <connection
    kind="reset"
    version="23.1"
@@ -819,6 +869,11 @@
    version="23.1"
    start="nios2_gen2_0.debug_reset_request"
    end="HEX_5.reset" />
+ <connection
+   kind="reset"
+   version="23.1"
+   start="nios2_gen2_0.debug_reset_request"
+   end="timer_0.reset" />
  <connection
    kind="reset"
    version="23.1"

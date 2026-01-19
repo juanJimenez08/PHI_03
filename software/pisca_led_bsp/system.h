@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'myhardware'
  * SOPC Builder design path: c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
  *
- * Generated: Mon Jan 19 16:56:04 BRT 2026
+ * Generated: Mon Jan 19 19:12:01 BRT 2026
  */
 
 /*
@@ -137,6 +137,7 @@
 #define __ALTERA_AVALON_ONCHIP_MEMORY2
 #define __ALTERA_AVALON_PIO
 #define __ALTERA_AVALON_SYSID_QSYS
+#define __ALTERA_AVALON_TIMER
 #define __ALTERA_NIOS2_GEN2
 
 
@@ -146,7 +147,7 @@
  */
 
 #define ALT_MODULE_CLASS_HEX_0 altera_avalon_pio
-#define HEX_0_BASE 0x11050
+#define HEX_0_BASE 0x11070
 #define HEX_0_BIT_CLEARING_EDGE_REGISTER 0
 #define HEX_0_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define HEX_0_CAPTURE 0
@@ -173,7 +174,7 @@
  */
 
 #define ALT_MODULE_CLASS_HEX_1 altera_avalon_pio
-#define HEX_1_BASE 0x11040
+#define HEX_1_BASE 0x11060
 #define HEX_1_BIT_CLEARING_EDGE_REGISTER 0
 #define HEX_1_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define HEX_1_CAPTURE 0
@@ -200,7 +201,7 @@
  */
 
 #define ALT_MODULE_CLASS_HEX_2 altera_avalon_pio
-#define HEX_2_BASE 0x11030
+#define HEX_2_BASE 0x11050
 #define HEX_2_BIT_CLEARING_EDGE_REGISTER 0
 #define HEX_2_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define HEX_2_CAPTURE 0
@@ -227,7 +228,7 @@
  */
 
 #define ALT_MODULE_CLASS_HEX_3 altera_avalon_pio
-#define HEX_3_BASE 0x11020
+#define HEX_3_BASE 0x11040
 #define HEX_3_BIT_CLEARING_EDGE_REGISTER 0
 #define HEX_3_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define HEX_3_CAPTURE 0
@@ -254,7 +255,7 @@
  */
 
 #define ALT_MODULE_CLASS_HEX_4 altera_avalon_pio
-#define HEX_4_BASE 0x11010
+#define HEX_4_BASE 0x11030
 #define HEX_4_BIT_CLEARING_EDGE_REGISTER 0
 #define HEX_4_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define HEX_4_CAPTURE 0
@@ -281,7 +282,7 @@
  */
 
 #define ALT_MODULE_CLASS_HEX_5 altera_avalon_pio
-#define HEX_5_BASE 0x11000
+#define HEX_5_BASE 0x11020
 #define HEX_5_BIT_CLEARING_EDGE_REGISTER 0
 #define HEX_5_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define HEX_5_CAPTURE 0
@@ -308,7 +309,7 @@
  */
 
 #define ALT_MODULE_CLASS_LEDS altera_avalon_pio
-#define LEDS_BASE 0x11060
+#define LEDS_BASE 0x11080
 #define LEDS_BIT_CLEARING_EDGE_REGISTER 0
 #define LEDS_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define LEDS_CAPTURE 0
@@ -345,19 +346,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/jtag_uart_0"
-#define ALT_STDERR_BASE 0x11078
+#define ALT_STDERR_BASE 0x11098
 #define ALT_STDERR_DEV jtag_uart_0
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/jtag_uart_0"
-#define ALT_STDIN_BASE 0x11078
+#define ALT_STDIN_BASE 0x11098
 #define ALT_STDIN_DEV jtag_uart_0
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/jtag_uart_0"
-#define ALT_STDOUT_BASE 0x11078
+#define ALT_STDOUT_BASE 0x11098
 #define ALT_STDOUT_DEV jtag_uart_0
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
@@ -384,7 +385,7 @@
  */
 
 #define ALT_MODULE_CLASS_jtag_uart_0 altera_avalon_jtag_uart
-#define JTAG_UART_0_BASE 0x11078
+#define JTAG_UART_0_BASE 0x11098
 #define JTAG_UART_0_IRQ 0
 #define JTAG_UART_0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_0_NAME "/dev/jtag_uart_0"
@@ -431,13 +432,40 @@
  */
 
 #define ALT_MODULE_CLASS_sysid_qsys_0 altera_avalon_sysid_qsys
-#define SYSID_QSYS_0_BASE 0x11070
+#define SYSID_QSYS_0_BASE 0x11090
 #define SYSID_QSYS_0_ID 0
 #define SYSID_QSYS_0_IRQ -1
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1768847125
+#define SYSID_QSYS_0_TIMESTAMP 1768857792
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
+
+
+/*
+ * timer_0 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_timer_0 altera_avalon_timer
+#define TIMER_0_ALWAYS_RUN 0
+#define TIMER_0_BASE 0x11000
+#define TIMER_0_COUNTER_SIZE 32
+#define TIMER_0_FIXED_PERIOD 0
+#define TIMER_0_FREQ 50000000
+#define TIMER_0_IRQ 1
+#define TIMER_0_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define TIMER_0_LOAD_VALUE 49999
+#define TIMER_0_MULT 0.001
+#define TIMER_0_NAME "/dev/timer_0"
+#define TIMER_0_PERIOD 1
+#define TIMER_0_PERIOD_UNITS "ms"
+#define TIMER_0_RESET_OUTPUT 0
+#define TIMER_0_SNAPSHOT 1
+#define TIMER_0_SPAN 32
+#define TIMER_0_TICKS_PER_SEC 1000
+#define TIMER_0_TIMEOUT_PULSE_OUTPUT 0
+#define TIMER_0_TIMER_DEVICE_TYPE 1
+#define TIMER_0_TYPE "altera_avalon_timer"
 
 #endif /* __SYSTEM_H_ */

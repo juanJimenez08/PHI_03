@@ -1,0 +1,8 @@
+19:12:48 **** Build of configuration Nios II for project pisca_led_bsp ****
+wsl make all 
+make: Warning: File 'obj/drivers/src/altera_avalon_timer_vars.d' has modification time 6.6 s in the future
+[BSP build complete]
+make: warning:  Clock skew detected.  Your build may be incomplete.
+
+19:12:50 Build Finished (took 2s.21ms)
+
