@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project>
-	<configuration id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1279552330" name="Nios II">
+	<configuration id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1765279770" name="Nios II">
 		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
 			<provider id="altera.tool.Nios2GCCBuiltinSpecsDetector">
 				<language id="org.eclipse.cdt.core.gcc">
@@ -1894,6 +1894,27 @@
 						<entry kind="macro" name="__hal__" value=""/>
 						<entry kind="macro" name="exit(a)" value="_exit(a)"/>
 					</resource>
+					<resource project-relative-path="drivers/src/altera_avalon_uart_fd.c">
+						<entry kind="includePath" name="/pisca_led_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/pisca_led_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/pisca_led_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_CLEAN_EXIT" value=""/>
+						<entry kind="macro" name="ALT_NO_C_PLUS_PLUS" value=""/>
+						<entry kind="macro" name="ALT_NO_EXIT" value=""/>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="ALT_USE_DIRECT_DRIVERS" value=""/>
+						<entry kind="macro" name="ALT_USE_SMALL_DRIVERS" value=""/>
+						<entry kind="macro" name="SMALL_C_LIB" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="exit(a)" value="_exit(a)"/>
+					</resource>
 					<resource project-relative-path="HAL/src/alt_wait.c">
 						<entry kind="includePath" name="/pisca_led_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
@@ -2419,6 +2440,27 @@
 						<entry kind="macro" name="__hal__" value=""/>
 						<entry kind="macro" name="exit(a)" value="_exit(a)"/>
 					</resource>
+					<resource project-relative-path="drivers/src/altera_avalon_spi.c">
+						<entry kind="includePath" name="/pisca_led_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/pisca_led_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/pisca_led_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_CLEAN_EXIT" value=""/>
+						<entry kind="macro" name="ALT_NO_C_PLUS_PLUS" value=""/>
+						<entry kind="macro" name="ALT_NO_EXIT" value=""/>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="ALT_USE_DIRECT_DRIVERS" value=""/>
+						<entry kind="macro" name="ALT_USE_SMALL_DRIVERS" value=""/>
+						<entry kind="macro" name="SMALL_C_LIB" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="exit(a)" value="_exit(a)"/>
+					</resource>
 					<resource project-relative-path="HAL/src/alt_dcache_flush_all.c">
 						<entry kind="includePath" name="/pisca_led_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
@@ -2881,6 +2923,27 @@
 						<entry kind="macro" name="__hal__" value=""/>
 						<entry kind="macro" name="exit(a)" value="_exit(a)"/>
 					</resource>
+					<resource project-relative-path="drivers/src/altera_avalon_uart_write.c">
+						<entry kind="includePath" name="/pisca_led_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/pisca_led_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/pisca_led_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_CLEAN_EXIT" value=""/>
+						<entry kind="macro" name="ALT_NO_C_PLUS_PLUS" value=""/>
+						<entry kind="macro" name="ALT_NO_EXIT" value=""/>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="ALT_USE_DIRECT_DRIVERS" value=""/>
+						<entry kind="macro" name="ALT_USE_SMALL_DRIVERS" value=""/>
+						<entry kind="macro" name="SMALL_C_LIB" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="exit(a)" value="_exit(a)"/>
+					</resource>
 					<resource project-relative-path="HAL/src/alt_dcache_flush.c">
 						<entry kind="includePath" name="/pisca_led_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
@@ -3134,6 +3197,27 @@
 						<entry kind="macro" name="exit(a)" value="_exit(a)"/>
 					</resource>
 					<resource project-relative-path="HAL/src/alt_instruction_exception_register.c">
+						<entry kind="includePath" name="/pisca_led_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/pisca_led_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/pisca_led_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_CLEAN_EXIT" value=""/>
+						<entry kind="macro" name="ALT_NO_C_PLUS_PLUS" value=""/>
+						<entry kind="macro" name="ALT_NO_EXIT" value=""/>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="ALT_USE_DIRECT_DRIVERS" value=""/>
+						<entry kind="macro" name="ALT_USE_SMALL_DRIVERS" value=""/>
+						<entry kind="macro" name="SMALL_C_LIB" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="exit(a)" value="_exit(a)"/>
+					</resource>
+					<resource project-relative-path="drivers/src/altera_avalon_uart_init.c">
 						<entry kind="includePath" name="/pisca_led_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -3469,6 +3553,27 @@
 						<entry kind="macro" name="__hal__" value=""/>
 						<entry kind="macro" name="exit(a)" value="_exit(a)"/>
 					</resource>
+					<resource project-relative-path="drivers/src/altera_avalon_uart_read.c">
+						<entry kind="includePath" name="/pisca_led_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/pisca_led_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/pisca_led_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_CLEAN_EXIT" value=""/>
+						<entry kind="macro" name="ALT_NO_C_PLUS_PLUS" value=""/>
+						<entry kind="macro" name="ALT_NO_EXIT" value=""/>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="ALT_USE_DIRECT_DRIVERS" value=""/>
+						<entry kind="macro" name="ALT_USE_SMALL_DRIVERS" value=""/>
+						<entry kind="macro" name="SMALL_C_LIB" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="exit(a)" value="_exit(a)"/>
+					</resource>
 					<resource project-relative-path="HAL/src/alt_putstr.c">
 						<entry kind="includePath" name="/pisca_led_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
@@ -3617,6 +3722,27 @@
 						<entry kind="macro" name="exit(a)" value="_exit(a)"/>
 					</resource>
 					<resource project-relative-path="HAL/src/alt_irq_vars.c">
+						<entry kind="includePath" name="/pisca_led_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/pisca_led_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/pisca_led_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_CLEAN_EXIT" value=""/>
+						<entry kind="macro" name="ALT_NO_C_PLUS_PLUS" value=""/>
+						<entry kind="macro" name="ALT_NO_EXIT" value=""/>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="ALT_USE_DIRECT_DRIVERS" value=""/>
+						<entry kind="macro" name="ALT_USE_SMALL_DRIVERS" value=""/>
+						<entry kind="macro" name="SMALL_C_LIB" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="exit(a)" value="_exit(a)"/>
+					</resource>
+					<resource project-relative-path="drivers/src/altera_avalon_uart_ioctl.c">
 						<entry kind="includePath" name="/pisca_led_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>

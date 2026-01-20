@@ -2,12 +2,12 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>19/01/2026 19:12:01</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1768860721375</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>19/01/2026 22:52:38</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1768873958567</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\juane\OneDrive\Documentos\QUARTUS\PROJETO_3_PHI\software\pisca_led_bsp</BspGeneratedLocation>
         <BspSettingsFile>.\settings.bsp</BspSettingsFile>
         <SopcDesignFile>C:\Users\juane\OneDrive\Documentos\QUARTUS\PROJETO_3_PHI\myhardware.sopcinfo</SopcDesignFile>
-        <SystemFileHash>e6bf82d259d67cfeb7143ed4499a33af021ddb2d74b5854dece8a4de3c7b</SystemFileHash>
+        <SystemFileHash>7d80573dc8334b509058d765ec35286ea7c458d7cb7ba5fdfad27cca6c8bfd</SystemFileHash>
         <JdiFile>default</JdiFile>
         <Cpu>nios2_gen2_0</Cpu>
         <SchemaVersion>1.9</SchemaVersion>
@@ -876,6 +876,30 @@
                 <Group>none</Group>
         </Setting>
         <Setting>
+                <SettingName>altera_avalon_uart_driver.enable_small_driver</SettingName>
+                <Identifier>ALTERA_AVALON_UART_SMALL</Identifier>
+                <Type>BooleanDefineOnly</Type>
+                <Value>false</Value>
+                <DefaultValue>false</DefaultValue>
+                <DestinationFile>public_mk_define</DestinationFile>
+                <Description>Small-footprint (polled mode) driver</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
+        <Setting>
+                <SettingName>altera_avalon_uart_driver.enable_ioctl</SettingName>
+                <Identifier>ALTERA_AVALON_UART_USE_IOCTL</Identifier>
+                <Type>BooleanDefineOnly</Type>
+                <Value>false</Value>
+                <DefaultValue>false</DefaultValue>
+                <DestinationFile>public_mk_define</DestinationFile>
+                <Description>Enable driver ioctl() support. This feature is not compatible with the 'small' driver; ioctl() support will not be compiled if either the UART 'enable_small_driver' or HAL 'enable_reduced_device_drivers' settings are enabled.</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
+        <Setting>
                 <SettingName>altera_avalon_jtag_uart_driver.enable_small_driver</SettingName>
                 <Identifier>ALTERA_AVALON_JTAG_UART_SMALL</Identifier>
                 <Type>BooleanDefineOnly</Type>
@@ -906,62 +930,74 @@
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>timer_0</slaveDescriptor>
+                <slaveDescriptor>uart_0</slaveDescriptor>
                 <addressRange>0x00011000 - 0x0001101F</addressRange>
+                <addressSpan>32</addressSpan>
+                <attributes>printable</attributes>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>spi_0</slaveDescriptor>
+                <addressRange>0x00011020 - 0x0001103F</addressRange>
+                <addressSpan>32</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>timer_0</slaveDescriptor>
+                <addressRange>0x00011040 - 0x0001105F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes>timer</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>HEX_5</slaveDescriptor>
-                <addressRange>0x00011020 - 0x0001102F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>HEX_4</slaveDescriptor>
-                <addressRange>0x00011030 - 0x0001103F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>HEX_3</slaveDescriptor>
-                <addressRange>0x00011040 - 0x0001104F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>HEX_2</slaveDescriptor>
-                <addressRange>0x00011050 - 0x0001105F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>HEX_1</slaveDescriptor>
                 <addressRange>0x00011060 - 0x0001106F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>HEX_0</slaveDescriptor>
+                <slaveDescriptor>HEX_4</slaveDescriptor>
                 <addressRange>0x00011070 - 0x0001107F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>LEDS</slaveDescriptor>
+                <slaveDescriptor>HEX_3</slaveDescriptor>
                 <addressRange>0x00011080 - 0x0001108F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>HEX_2</slaveDescriptor>
+                <addressRange>0x00011090 - 0x0001109F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>HEX_1</slaveDescriptor>
+                <addressRange>0x000110A0 - 0x000110AF</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>HEX_0</slaveDescriptor>
+                <addressRange>0x000110B0 - 0x000110BF</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>LEDS</slaveDescriptor>
+                <addressRange>0x000110C0 - 0x000110CF</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>sysid_qsys_0</slaveDescriptor>
-                <addressRange>0x00011090 - 0x00011097</addressRange>
+                <addressRange>0x000110D0 - 0x000110D7</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>jtag_uart_0</slaveDescriptor>
-                <addressRange>0x00011098 - 0x0001109F</addressRange>
+                <addressRange>0x000110D8 - 0x000110DF</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>

@@ -1,6 +1,8 @@
-21:12:35 **** Incremental Build of configuration Nios II for project pisca_led_bsp ****
+22:53:48 **** Build of configuration Nios II for project pisca_led_bsp ****
 wsl make all 
+make: Warning: File 'obj/drivers/src/altera_avalon_uart_write.d' has modification time 6.3 s in the future
 [BSP build complete]
+make: warning:  Clock skew detected.  Your build may be incomplete.
 
-21:12:37 Build Finished (took 2s.18ms)
+22:53:50 Build Finished (took 2s.116ms)
 
