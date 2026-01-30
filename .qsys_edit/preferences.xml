@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <preferences>
  <debug showDebugMenu="0" />
- <systemtable filter="All Interfaces">
+ <systemtable filter="All Interfaces" showClockDomains="0" showResetDomains="0">
   <columns>
    <connections preferredWidth="143" />
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
- <library
-   expandedCategories="Project,Library/Processors and Peripherals,Library" />
+ <library expandedCategories="Library,Project,Project/group_04" />
  <window width="1920" height="1032" x="0" y="0" />
  <generation synthesis="VHDL" />
  <hdlexample language="VHDL" />

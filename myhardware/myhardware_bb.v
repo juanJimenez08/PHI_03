@@ -14,7 +14,9 @@ module myhardware (
 	spi_0_SCLK,
 	spi_0_SS_n,
 	uart_0_rxd,
-	uart_0_txd);	
+	uart_0_txd,
+	meu_display_buttons,
+	meu_display_hex_out);	
 
 	input		clk_clk;
 	output	[6:0]	hex0_export;
@@ -31,4 +33,6 @@ module myhardware (
 	output		spi_0_SS_n;
 	input		uart_0_rxd;
 	output		uart_0_txd;
+	input	[2:0]	meu_display_buttons;
+	output	[41:0]	meu_display_hex_out;
 endmodule

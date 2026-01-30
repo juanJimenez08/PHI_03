@@ -1,0 +1,26 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity scroller_avalon is
+    port (
+        -- Interface Avalon-MM (Liga no Nios II)
+        clk             : in  std_logic;
+        reset           : in  std_logic;
+        avs_write       : in  std_logic;                      -- Sinal de escrita
+        avs_writedata   : in  std_logic_vector(31 downto 0);  -- Dado (char)
+        avs_address     : in  std_logic_vector(4 downto 0);   -- Endereço (0 a 31)
+
+        -- Interface Externa (Conduit - Vai para os pinos do Top Level)
+        con_buttons     : in  std_logic_vector(2 downto 0);   -- Botões de controle
+        con_hex_out     : out std_logic_vector(41 downto 0)   -- 6 displays de 7 bits (6*7 = 42 bits)
+    );
+end scroller_avalon;
+
+architecture rtl of scroller_avalon is
+    -- Aqui dentro vai aquela lógica toda de RAM, Contadores e Decoder
+    -- que conversamos antes.
+    -- (Por brevidade, imagine a lógica aqui dentro conectando a RAM ao con_hex_out)
+begin
+    -- Implementação do scroll...
+end rtl;

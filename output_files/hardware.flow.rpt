@@ -1,5 +1,5 @@
 Flow report for hardware
-Mon Jan 19 22:48:16 2026
+Fri Jan 30 11:29:27 2026
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -38,29 +38,24 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+----------------------------------------------------------------------------------+
-; Flow Summary                                                                     ;
-+---------------------------------+------------------------------------------------+
-; Flow Status                     ; Successful - Mon Jan 19 22:48:08 2026          ;
-; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
-; Revision Name                   ; hardware                                       ;
-; Top-level Entity Name           ; hardware                                       ;
-; Family                          ; Cyclone V                                      ;
-; Device                          ; 5CSEMA5F31C6                                   ;
-; Timing Models                   ; Final                                          ;
-; Logic utilization (in ALMs)     ; 972 / 32,070 ( 3 % )                           ;
-; Total registers                 ; 1511                                           ;
-; Total pins                      ; 63 / 457 ( 14 % )                              ;
-; Total virtual pins              ; 0                                              ;
-; Total block memory bits         ; 171,264 / 4,065,280 ( 4 % )                    ;
-; Total DSP Blocks                ; 0 / 87 ( 0 % )                                 ;
-; Total HSSI RX PCSs              ; 0                                              ;
-; Total HSSI PMA RX Deserializers ; 0                                              ;
-; Total HSSI TX PCSs              ; 0                                              ;
-; Total HSSI PMA TX Serializers   ; 0                                              ;
-; Total PLLs                      ; 0 / 6 ( 0 % )                                  ;
-; Total DLLs                      ; 0 / 4 ( 0 % )                                  ;
-+---------------------------------+------------------------------------------------+
++------------------------------------------------------------------------------+
+; Flow Summary                                                                 ;
++-----------------------------+------------------------------------------------+
+; Flow Status                 ; Flow Failed - Fri Jan 30 11:29:27 2026         ;
+; Quartus Prime Version       ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name               ; hardware                                       ;
+; Top-level Entity Name       ; hardware                                       ;
+; Family                      ; Cyclone V                                      ;
+; Device                      ; 5CSEMA5F31C6                                   ;
+; Timing Models               ; Final                                          ;
+; Logic utilization (in ALMs) ; N/A until Partition Merge                      ;
+; Total registers             ; N/A until Partition Merge                      ;
+; Total pins                  ; N/A until Partition Merge                      ;
+; Total virtual pins          ; N/A until Partition Merge                      ;
+; Total block memory bits     ; N/A until Partition Merge                      ;
+; Total PLLs                  ; N/A until Partition Merge                      ;
+; Total DLLs                  ; N/A until Partition Merge                      ;
++-----------------------------+------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -68,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/19/2026 22:44:22 ;
+; Start date & time ; 01/30/2026 11:29:13 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; hardware            ;
 +-------------------+---------------------+
@@ -79,7 +74,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+--------------------------------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                                        ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+--------------------------------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 75470024420194.176887346200420                               ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 75470024420194.176978335329864                               ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                           ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                            ; --            ; --          ; --         ;
 ; MISC_FILE                           ; myhardware/synthesis/../myhardware.cmp                       ; --            ; --          ; --         ;
@@ -103,11 +98,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:27     ; 1.0                     ; 5127 MB             ; 00:00:42                           ;
-; Fitter               ; 00:03:04     ; 1.1                     ; 7079 MB             ; 00:10:27                           ;
-; Assembler            ; 00:00:05     ; 1.0                     ; 5249 MB             ; 00:00:05                           ;
-; Timing Analyzer      ; 00:00:06     ; 2.2                     ; 5438 MB             ; 00:00:12                           ;
-; Total                ; 00:03:42     ; --                      ; --                  ; 00:11:26                           ;
+; Analysis & Synthesis ; 00:00:15     ; 1.0                     ; 5012 MB             ; 00:00:20                           ;
+; Total                ; 00:00:15     ; --                      ; --                  ; 00:00:20                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -117,9 +109,6 @@ https://fpgasoftware.intel.com/eula.
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
 ; Analysis & Synthesis ; JuanJimenez      ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; JuanJimenez      ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; JuanJimenez      ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; JuanJimenez      ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -127,9 +116,6 @@ https://fpgasoftware.intel.com/eula.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off hardware -c hardware
-quartus_fit --read_settings_files=off --write_settings_files=off hardware -c hardware
-quartus_asm --read_settings_files=off --write_settings_files=off hardware -c hardware
-quartus_sta hardware -c hardware
 
 
 
