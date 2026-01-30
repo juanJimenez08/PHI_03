@@ -1,6 +1,0 @@
-09:58:26 **** Build of configuration Nios II for project pisca_led_bsp ****
-wsl make all 
-[BSP build complete]
-
-09:58:28 Build Finished (took 2s.121ms)
-

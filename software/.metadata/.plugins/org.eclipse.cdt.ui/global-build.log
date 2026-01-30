@@ -1,17 +1,17 @@
-22:52:40 **** Clean-only build of configuration Nios II for project pisca_led_bsp ****
+14:02:53 **** Clean-only build of configuration Nios II for project display_bsp ****
 wsl make clean 
-make: Warning: File 'public.mk' has modification time 8.4 s in the future
+make: Warning: File 'public.mk' has modification time 0.79 s in the future
 [BSP clean complete]
 make: warning:  Clock skew detected.  Your build may be incomplete.
-22:52:45 **** Clean-only build of configuration Nios II for project pisca_led ****
+14:02:55 **** Clean-only build of configuration Nios II for project display ****
 wsl make clean 
-make: Warning: File '/mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/mem_init.mk' has modification time 3.9 s in the future
-[pisca_led clean complete]
+make: Warning: File 'Makefile' has modification time 1.5 s in the future
+[display clean complete]
 make: warning:  Clock skew detected.  Your build may be incomplete.
-22:53:32 **** Build of configuration Nios II for project pisca_led ****
+14:04:12 **** Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 Compiling alt_alarm_start.c...
 nios2-elf-gcc.exe -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    '-Os' -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_alarm_start.o HAL/src/alt_alarm_start.c
 Compiling alt_busy_sleep.c...
@@ -80,12 +80,12 @@ Compiling alt_getchar.c...
 nios2-elf-gcc.exe -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    '-Os' -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_getchar.o HAL/src/alt_getchar.c
 In file included from HAL/src/alt_getchar.c:36:
 ./system.h: In function 'alt_getchar':
-./system.h:389:38: warning: 'c' may be used uninitialized [-Wmaybe-uninitialized]
-  389 | #define ALT_MODULE_CLASS_jtag_uart_0 altera_avalon_jtag_uart
+./system.h:390:38: warning: 'c' may be used uninitialized [-Wmaybe-uninitialized]
+  390 | #define ALT_MODULE_CLASS_jtag_uart_0 altera_avalon_jtag_uart
       |                                      ^~~~~~~~~~~~~~~~~~~~~~~
 In file included from HAL/src/alt_getchar.c:37:
-./system.h:389:38: note: by argument 2 of type 'const char *' to 'altera_avalon_jtag_uart_read' declared here
-  389 | #define ALT_MODULE_CLASS_jtag_uart_0 altera_avalon_jtag_uart
+./system.h:390:38: note: by argument 2 of type 'const char *' to 'altera_avalon_jtag_uart_read' declared here
+  390 | #define ALT_MODULE_CLASS_jtag_uart_0 altera_avalon_jtag_uart
       |                                      ^~~~~~~~~~~~~~~~~~~~~~~
 ./HAL/inc/sys/alt_driver.h:76:3: note: in definition of macro 'ALT_DRIVER_FUNC_NAME2'
    76 |   module_class ## _ ## func
@@ -243,940 +243,347 @@ rm -f -f libhal_bsp.a
 nios2-elf-ar.exe -src libhal_bsp.a obj/HAL/src/alt_alarm_start.o obj/HAL/src/alt_busy_sleep.o obj/HAL/src/alt_close.o obj/HAL/src/alt_dcache_flush.o obj/HAL/src/alt_dcache_flush_all.o obj/HAL/src/alt_dcache_flush_no_writeback.o obj/HAL/src/alt_dev.o obj/HAL/src/alt_dev_llist_insert.o obj/HAL/src/alt_dma_rxchan_open.o obj/HAL/src/alt_dma_txchan_open.o obj/HAL/src/alt_do_ctors.o obj/HAL/src/alt_do_dtors.o obj/HAL/src/alt_ecc_fatal_entry.o obj/HAL/src/alt_ecc_fatal_exception.o obj/HAL/src/alt_env_lock.o obj/HAL/src/alt_environ.o obj/HAL/src/alt_errno.o obj/HAL/src/alt_exception_entry.o obj/HAL/src/alt_exception_muldiv.o obj/HAL/src/alt_exception_trap.o obj/HAL/src/alt_execve.o obj/HAL/src/alt_exit.o obj/HAL/src/alt_fcntl.o obj/HAL/src/alt_fd_lock.o obj/HAL/src/alt_fd_unlock.o obj/HAL/src/alt_find_dev.o obj/HAL/src/alt_find_file.o obj/HAL/src/alt_flash_dev.o obj/HAL/src/alt_fork.o obj/HAL/src/alt_fs_reg.o obj/HAL/src/alt_fstat.o obj/HAL/src/alt_get_fd.o obj/HAL/src/alt_getchar.o obj/HAL/src/alt_getpid.o obj/HAL/src/alt_gettod.o obj/HAL/src/alt_gmon.o obj/HAL/src/alt_icache_flush.o obj/HAL/src/alt_icache_flush_all.o obj/HAL/src/alt_iic.o obj/HAL/src/alt_iic_isr_register.o obj/HAL/src/alt_instruction_exception_entry.o obj/HAL/src/alt_instruction_exception_register.o obj/HAL/src/alt_io_redirect.o obj/HAL/src/alt_ioctl.o obj/HAL/src/alt_irq_entry.o obj/HAL/src/alt_irq_handler.o obj/HAL/src/alt_irq_register.o obj/HAL/src/alt_irq_vars.o obj/HAL/src/alt_isatty.o obj/HAL/src/alt_kill.o obj/HAL/src/alt_link.o obj/HAL/src/alt_load.o obj/HAL/src/alt_log_macro.o obj/HAL/src/alt_log_printf.o obj/HAL/src/alt_lseek.o obj/HAL/src/alt_main.o obj/HAL/src/alt_malloc_lock.o obj/HAL/src/alt_mcount.o obj/HAL/src/alt_open.o obj/HAL/src/alt_printf.o obj/HAL/src/alt_putchar.o obj/HAL/src/alt_putcharbuf.o obj/HAL/src/alt_putstr.o obj/HAL/src/alt_read.o obj/HAL/src/alt_release_fd.o obj/HAL/src/alt_remap_cached.o obj/HAL/src/alt_remap_uncached.o obj/HAL/src/alt_rename.o obj/HAL/src/alt_sbrk.o obj/HAL/src/alt_settod.o obj/HAL/src/alt_software_exception.o obj/HAL/src/alt_stat.o obj/HAL/src/alt_tick.o obj/HAL/src/alt_times.o obj/HAL/src/alt_uncached_free.o obj/HAL/src/alt_uncached_malloc.o obj/HAL/src/alt_unlink.o obj/HAL/src/alt_usleep.o obj/HAL/src/alt_wait.o obj/HAL/src/alt_write.o obj/HAL/src/altera_nios2_gen2_irq.o obj/HAL/src/crt0.o obj/alt_sys_init.o obj/drivers/src/altera_avalon_jtag_uart_fd.o obj/drivers/src/altera_avalon_jtag_uart_init.o obj/drivers/src/altera_avalon_jtag_uart_ioctl.o obj/drivers/src/altera_avalon_jtag_uart_read.o obj/drivers/src/altera_avalon_jtag_uart_write.o obj/drivers/src/altera_avalon_spi.o obj/drivers/src/altera_avalon_sysid_qsys.o obj/drivers/src/altera_avalon_timer_sc.o obj/drivers/src/altera_avalon_timer_ts.o obj/drivers/src/altera_avalon_timer_vars.o obj/drivers/src/altera_avalon_uart_fd.o obj/drivers/src/altera_avalon_uart_init.o obj/drivers/src/altera_avalon_uart_ioctl.o obj/drivers/src/altera_avalon_uart_read.o obj/drivers/src/altera_avalon_uart_write.o
 [BSP build complete]
 Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
-hello_world_small.c: In function 'main':
-hello_world_small.c:53:9: warning: unused variable 'contagem_main' [-Wunused-variable]
-   53 |     int contagem_main = 0;
-      |         ^~~~~~~~~~~~~
-make: Warning: File '/mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//libhal_bsp.a' has modification time 9.2 s in the future
-Info: Linking pisca_led.elf
-nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -msmallc  -Wl,-Map=pisca_led.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o pisca_led.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert.exe pisca_led.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1768872009 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
-Info: (pisca_led.elf) 1420 Bytes program size (code + initialized data).
-Info:                 18 KBytes free for stack + heap.
-Info: Creating pisca_led.objdump
-nios2-elf-objdump.exe --disassemble --syms --all-header --source pisca_led.elf >pisca_led.objdump
-[pisca_led build complete]
+nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
+make: Warning: File '/mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//libhal_bsp.a' has modification time 2.1 s in the future
+Info: Linking display.elf
+nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/ -msmallc  -Wl,-Map=display.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o display.elf obj/default/hello_world_small.o -lm -msys-lib=m
+nios2-elf-insert.exe display.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1769785079 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
+Info: (display.elf) 1424 Bytes program size (code + initialized data).
+Info:               18 KBytes free for stack + heap.
+Info: Creating display.objdump
+nios2-elf-objdump.exe --disassemble --syms --all-header --source display.elf >display.objdump
 make: warning:  Clock skew detected.  Your build may be incomplete.
-22:53:48 **** Build of configuration Nios II for project pisca_led_bsp ****
+[display build complete]
+14:04:35 **** Build of configuration Nios II for project display_bsp ****
 wsl make all 
-make: Warning: File 'obj/drivers/src/altera_avalon_uart_write.d' has modification time 6.3 s in the future
 [BSP build complete]
-make: warning:  Clock skew detected.  Your build may be incomplete.
-08:21:29 **** Build of configuration Nios II for project pisca_led ****
+14:08:08 **** Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
-[pisca_led build complete]
-08:27:23 **** Build of configuration Nios II for project pisca_led ****
+[display build complete]
+14:14:16 **** Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
-[pisca_led build complete]
-08:27:31 **** Incremental Build of configuration Nios II for project pisca_led ****
+[display build complete]
+14:14:23 **** Incremental Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
-[pisca_led build complete]
-08:28:07 **** Build of configuration Nios II for project pisca_led ****
+[display build complete]
+14:14:46 **** Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Command canceled
+14:14:52 **** Build of configuration Nios II for project display ****
+wsl make all 
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
-[pisca_led build complete]
-08:28:13 **** Incremental Build of configuration Nios II for project pisca_led ****
+[display build complete]
+14:14:54 **** Incremental Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
-[pisca_led build complete]
-08:28:32 **** Build of configuration Nios II for project pisca_led ****
+[display build complete]
+14:15:31 **** Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
-[pisca_led build complete]
-08:28:34 **** Incremental Build of configuration Nios II for project pisca_led ****
+[display build complete]
+14:15:35 **** Incremental Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
-[pisca_led build complete]
-08:29:11 **** Build of configuration Nios II for project pisca_led ****
+[display build complete]
+14:15:55 **** Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
-[pisca_led build complete]
-08:29:17 **** Incremental Build of configuration Nios II for project pisca_led ****
+[display build complete]
+14:15:56 **** Incremental Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
-[pisca_led build complete]
-08:31:39 **** Incremental Build of configuration Nios II for project pisca_led ****
+[display build complete]
+14:18:52 **** Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
-[pisca_led build complete]
-08:54:44 **** Build of configuration Nios II for project pisca_led ****
+[display build complete]
+14:19:11 **** Incremental Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+[BSP build complete]
+[display build complete]
+14:22:25 **** Build of configuration Nios II for project display ****
+wsl make all 
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+[BSP build complete]
+[display build complete]
+14:22:32 **** Incremental Build of configuration Nios II for project display ****
+wsl make all 
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+[BSP build complete]
+[display build complete]
+14:23:59 **** Incremental Build of configuration Nios II for project display ****
+wsl make all 
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+[BSP build complete]
+[display build complete]
+14:27:48 **** Incremental Build of configuration Nios II for project display ****
+wsl make all 
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
 Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
-In file included from hello_world_small.c:2:
-hello_world_small.c: In function 'main':
-c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/system.h:152:20: warning: initialization of 'int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
-  152 | #define HEX_0_BASE 0x110b0
-      |                    ^~~~~~~
-hello_world_small.c:37:18: note: in expansion of macro 'HEX_0_BASE'
-   37 |         int *a = HEX_0_BASE;
-      |                  ^~~~~~~~~~
-hello_world_small.c:58:9: warning: unused variable 'contagem_main' [-Wunused-variable]
-   58 |     int contagem_main = 0;
-      |         ^~~~~~~~~~~~~
-Info: Linking pisca_led.elf
-nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -msmallc  -Wl,-Map=pisca_led.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o pisca_led.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert.exe pisca_led.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1768872009 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
-Info: (pisca_led.elf) 1432 Bytes program size (code + initialized data).
-Info:                 18 KBytes free for stack + heap.
-Info: Creating pisca_led.objdump
-nios2-elf-objdump.exe --disassemble --syms --all-header --source pisca_led.elf >pisca_led.objdump
-[pisca_led build complete]
-08:55:10 **** Incremental Build of configuration Nios II for project pisca_led ****
+nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
+Info: Linking display.elf
+nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/ -msmallc  -Wl,-Map=display.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o display.elf obj/default/hello_world_small.o -lm -msys-lib=m
+nios2-elf-insert.exe display.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1769785079 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
+Info: (display.elf) 1420 Bytes program size (code + initialized data).
+Info:               18 KBytes free for stack + heap.
+Info: Creating display.objdump
+nios2-elf-objdump.exe --disassemble --syms --all-header --source display.elf >display.objdump
+[display build complete]
+14:27:56 **** Build of configuration Nios II for project display_bsp ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
 [BSP build complete]
-make: Warning: File 'pisca_led.elf' has modification time 6 s in the future
-[pisca_led build complete]
-make: warning:  Clock skew detected.  Your build may be incomplete.
-08:56:18 **** Build of configuration Nios II for project pisca_led ****
+14:28:07 **** Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
-hello_world_small.c: In function 'main':
-hello_world_small.c:58:9: warning: unused variable 'contagem_main' [-Wunused-variable]
-   58 |     int contagem_main = 0;
-      |         ^~~~~~~~~~~~~
-Info: Linking pisca_led.elf
-nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -msmallc  -Wl,-Map=pisca_led.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o pisca_led.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert.exe pisca_led.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1768872009 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
-Info: (pisca_led.elf) 1428 Bytes program size (code + initialized data).
-Info:                 18 KBytes free for stack + heap.
-Info: Creating pisca_led.objdump
-nios2-elf-objdump.exe --disassemble --syms --all-header --source pisca_led.elf >pisca_led.objdump
-[pisca_led build complete]
-08:56:26 **** Incremental Build of configuration Nios II for project pisca_led ****
+[display build complete]
+14:28:09 **** Incremental Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
-make: Warning: File 'pisca_led.elf' has modification time 5.8 s in the future
-[pisca_led build complete]
-make: warning:  Clock skew detected.  Your build may be incomplete.
-08:57:42 **** Build of configuration Nios II for project pisca_led ****
+[display build complete]
+14:35:43 **** Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+[BSP build complete]
+[display build complete]
+14:35:50 **** Incremental Build of configuration Nios II for project display ****
+wsl make all 
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+[BSP build complete]
+[display build complete]
+14:36:57 **** Incremental Build of configuration Nios II for project display ****
+wsl make all 
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
 Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
-hello_world_small.c: In function 'main':
-hello_world_small.c:58:9: warning: unused variable 'contagem_main' [-Wunused-variable]
-   58 |     int contagem_main = 0;
-      |         ^~~~~~~~~~~~~
-Info: Linking pisca_led.elf
-nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -msmallc  -Wl,-Map=pisca_led.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o pisca_led.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert.exe pisca_led.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1768872009 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
-Info: (pisca_led.elf) 1428 Bytes program size (code + initialized data).
-Info:                 18 KBytes free for stack + heap.
-Info: Creating pisca_led.objdump
-nios2-elf-objdump.exe --disassemble --syms --all-header --source pisca_led.elf >pisca_led.objdump
-[pisca_led build complete]
-08:57:47 **** Incremental Build of configuration Nios II for project pisca_led ****
+nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
+Info: Linking display.elf
+nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/ -msmallc  -Wl,-Map=display.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o display.elf obj/default/hello_world_small.o -lm -msys-lib=m
+nios2-elf-insert.exe display.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1769785079 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
+Info: (display.elf) 1436 Bytes program size (code + initialized data).
+Info:               18 KBytes free for stack + heap.
+Info: Creating display.objdump
+nios2-elf-objdump.exe --disassemble --syms --all-header --source display.elf >display.objdump
+[display build complete]
+14:37:03 **** Incremental Build of configuration Nios II for project display_bsp ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
 [BSP build complete]
-make: Warning: File 'pisca_led.elf' has modification time 7.5 s in the future
-[pisca_led build complete]
-make: warning:  Clock skew detected.  Your build may be incomplete.
-08:58:13 **** Build of configuration Nios II for project pisca_led ****
+14:37:10 **** Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
-make: Warning: File 'hello_world_small.c' has modification time 0.38 s in the future
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
-hello_world_small.c: In function 'main':
-hello_world_small.c:58:9: warning: unused variable 'contagem_main' [-Wunused-variable]
-   58 |     int contagem_main = 0;
-      |         ^~~~~~~~~~~~~
-Info: Linking pisca_led.elf
-nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -msmallc  -Wl,-Map=pisca_led.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o pisca_led.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert.exe pisca_led.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1768872009 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
-Info: (pisca_led.elf) 1428 Bytes program size (code + initialized data).
-Info:                 18 KBytes free for stack + heap.
-Info: Creating pisca_led.objdump
-nios2-elf-objdump.exe --disassemble --syms --all-header --source pisca_led.elf >pisca_led.objdump
-[pisca_led build complete]
-make: warning:  Clock skew detected.  Your build may be incomplete.
-08:58:20 **** Incremental Build of configuration Nios II for project pisca_led ****
+[display build complete]
+14:37:12 **** Incremental Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
-make: Warning: File 'pisca_led.elf' has modification time 7.5 s in the future
-[pisca_led build complete]
-make: warning:  Clock skew detected.  Your build may be incomplete.
-08:59:16 **** Build of configuration Nios II for project pisca_led ****
+[display build complete]
+14:37:38 **** Incremental Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
 Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
-hello_world_small.c: In function 'main':
-hello_world_small.c:58:9: warning: unused variable 'contagem_main' [-Wunused-variable]
-   58 |     int contagem_main = 0;
-      |         ^~~~~~~~~~~~~
-Info: Linking pisca_led.elf
-nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -msmallc  -Wl,-Map=pisca_led.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o pisca_led.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert.exe pisca_led.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1768872009 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
-Info: (pisca_led.elf) 1428 Bytes program size (code + initialized data).
-Info:                 18 KBytes free for stack + heap.
-Info: Creating pisca_led.objdump
-nios2-elf-objdump.exe --disassemble --syms --all-header --source pisca_led.elf >pisca_led.objdump
-[pisca_led build complete]
-08:59:22 **** Incremental Build of configuration Nios II for project pisca_led ****
+nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
+Info: Linking display.elf
+nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/ -msmallc  -Wl,-Map=display.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o display.elf obj/default/hello_world_small.o -lm -msys-lib=m
+nios2-elf-insert.exe display.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1769785079 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
+Info: (display.elf) 1468 Bytes program size (code + initialized data).
+Info:               18 KBytes free for stack + heap.
+Info: Creating display.objdump
+nios2-elf-objdump.exe --disassemble --syms --all-header --source display.elf >display.objdump
+[display build complete]
+14:37:44 **** Incremental Build of configuration Nios II for project display_bsp ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
 [BSP build complete]
-make: Warning: File 'pisca_led.elf' has modification time 6.5 s in the future
-[pisca_led build complete]
-make: warning:  Clock skew detected.  Your build may be incomplete.
-08:59:45 **** Build of configuration Nios II for project pisca_led ****
+14:37:52 **** Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
-hello_world_small.c: In function 'main':
-hello_world_small.c:58:9: warning: unused variable 'contagem_main' [-Wunused-variable]
-   58 |     int contagem_main = 0;
-      |         ^~~~~~~~~~~~~
-Info: Linking pisca_led.elf
-nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -msmallc  -Wl,-Map=pisca_led.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o pisca_led.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert.exe pisca_led.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1768872009 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
-Info: (pisca_led.elf) 1428 Bytes program size (code + initialized data).
-Info:                 18 KBytes free for stack + heap.
-Info: Creating pisca_led.objdump
-nios2-elf-objdump.exe --disassemble --syms --all-header --source pisca_led.elf >pisca_led.objdump
-[pisca_led build complete]
-08:59:53 **** Incremental Build of configuration Nios II for project pisca_led ****
+[display build complete]
+14:37:54 **** Incremental Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
-make: Warning: File 'pisca_led.elf' has modification time 6 s in the future
-make: warning:  Clock skew detected.  Your build may be incomplete.
-[pisca_led build complete]
-09:02:51 **** Build of configuration Nios II for project pisca_led ****
+[display build complete]
+14:38:42 **** Incremental Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
 Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
-hello_world_small.c: In function 'main':
-hello_world_small.c:58:9: warning: unused variable 'contagem_main' [-Wunused-variable]
-   58 |     int contagem_main = 0;
-      |         ^~~~~~~~~~~~~
-Info: Linking pisca_led.elf
-nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -msmallc  -Wl,-Map=pisca_led.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o pisca_led.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert.exe pisca_led.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1768872009 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
-Info: (pisca_led.elf) 1428 Bytes program size (code + initialized data).
-Info:                 18 KBytes free for stack + heap.
-Info: Creating pisca_led.objdump
-nios2-elf-objdump.exe --disassemble --syms --all-header --source pisca_led.elf >pisca_led.objdump
-[pisca_led build complete]
-09:03:01 **** Incremental Build of configuration Nios II for project pisca_led ****
+nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
+Info: Linking display.elf
+nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/ -msmallc  -Wl,-Map=display.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o display.elf obj/default/hello_world_small.o -lm -msys-lib=m
+nios2-elf-insert.exe display.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1769785079 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
+Info: (display.elf) 1468 Bytes program size (code + initialized data).
+Info:               18 KBytes free for stack + heap.
+Info: Creating display.objdump
+nios2-elf-objdump.exe --disassemble --syms --all-header --source display.elf >display.objdump
+[display build complete]
+14:38:46 **** Incremental Build of configuration Nios II for project display_bsp ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
 [BSP build complete]
-make: Warning: File 'pisca_led.elf' has modification time 8.9 s in the future
-[pisca_led build complete]
-make: warning:  Clock skew detected.  Your build may be incomplete.
-09:04:27 **** Build of configuration Nios II for project pisca_led ****
+14:38:55 **** Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
-hello_world_small.c: In function 'main':
-hello_world_small.c:59:9: warning: unused variable 'contagem_main' [-Wunused-variable]
-   59 |     int contagem_main = 0;
-      |         ^~~~~~~~~~~~~
-Info: Linking pisca_led.elf
-nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -msmallc  -Wl,-Map=pisca_led.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o pisca_led.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert.exe pisca_led.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1768872009 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
-Info: (pisca_led.elf) 1436 Bytes program size (code + initialized data).
-Info:                 18 KBytes free for stack + heap.
-Info: Creating pisca_led.objdump
-nios2-elf-objdump.exe --disassemble --syms --all-header --source pisca_led.elf >pisca_led.objdump
-[pisca_led build complete]
-09:04:37 **** Incremental Build of configuration Nios II for project pisca_led ****
+[display build complete]
+14:38:58 **** Incremental Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
-make: Warning: File 'pisca_led.elf' has modification time 8.6 s in the future
-[pisca_led build complete]
-make: warning:  Clock skew detected.  Your build may be incomplete.
-09:05:21 **** Build of configuration Nios II for project pisca_led ****
+[display build complete]
+14:39:49 **** Incremental Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
 Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
-hello_world_small.c: In function 'main':
-hello_world_small.c:59:9: warning: unused variable 'contagem_main' [-Wunused-variable]
-   59 |     int contagem_main = 0;
-      |         ^~~~~~~~~~~~~
-Info: Linking pisca_led.elf
-nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -msmallc  -Wl,-Map=pisca_led.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o pisca_led.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert.exe pisca_led.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1768872009 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
-Info: (pisca_led.elf) 1436 Bytes program size (code + initialized data).
-Info:                 18 KBytes free for stack + heap.
-Info: Creating pisca_led.objdump
-nios2-elf-objdump.exe --disassemble --syms --all-header --source pisca_led.elf >pisca_led.objdump
-[pisca_led build complete]
-09:05:29 **** Incremental Build of configuration Nios II for project pisca_led ****
+nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
+Info: Linking display.elf
+nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/ -msmallc  -Wl,-Map=display.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o display.elf obj/default/hello_world_small.o -lm -msys-lib=m
+nios2-elf-insert.exe display.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1769785079 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
+Info: (display.elf) 1468 Bytes program size (code + initialized data).
+Info:               18 KBytes free for stack + heap.
+Info: Creating display.objdump
+nios2-elf-objdump.exe --disassemble --syms --all-header --source display.elf >display.objdump
+[display build complete]
+14:39:55 **** Incremental Build of configuration Nios II for project display_bsp ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
 [BSP build complete]
-make: Warning: File 'pisca_led.elf' has modification time 7.3 s in the future
-[pisca_led build complete]
-make: warning:  Clock skew detected.  Your build may be incomplete.
-09:06:16 **** Build of configuration Nios II for project pisca_led ****
+14:40:01 **** Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
-hello_world_small.c: In function 'main':
-hello_world_small.c:59:9: warning: unused variable 'contagem_main' [-Wunused-variable]
-   59 |     int contagem_main = 0;
-      |         ^~~~~~~~~~~~~
-Info: Linking pisca_led.elf
-nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -msmallc  -Wl,-Map=pisca_led.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o pisca_led.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert.exe pisca_led.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1768872009 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
-Info: (pisca_led.elf) 1436 Bytes program size (code + initialized data).
-Info:                 18 KBytes free for stack + heap.
-Info: Creating pisca_led.objdump
-nios2-elf-objdump.exe --disassemble --syms --all-header --source pisca_led.elf >pisca_led.objdump
-[pisca_led build complete]
-09:06:24 **** Incremental Build of configuration Nios II for project pisca_led ****
+[display build complete]
+14:40:04 **** Incremental Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
-make: Warning: File 'pisca_led.elf' has modification time 6.4 s in the future
-[pisca_led build complete]
-make: warning:  Clock skew detected.  Your build may be incomplete.
-09:09:15 **** Build of configuration Nios II for project pisca_led ****
+[display build complete]
+14:40:42 **** Incremental Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
 Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
-hello_world_small.c: In function 'main':
-hello_world_small.c:61:9: warning: unused variable 'contagem_main' [-Wunused-variable]
-   61 |     int contagem_main = 0;
-      |         ^~~~~~~~~~~~~
-Info: Linking pisca_led.elf
-nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -msmallc  -Wl,-Map=pisca_led.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o pisca_led.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert.exe pisca_led.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1768872009 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
-Info: (pisca_led.elf) 1452 Bytes program size (code + initialized data).
-Info:                 18 KBytes free for stack + heap.
-Info: Creating pisca_led.objdump
-nios2-elf-objdump.exe --disassemble --syms --all-header --source pisca_led.elf >pisca_led.objdump
-[pisca_led build complete]
-09:09:28 **** Incremental Build of configuration Nios II for project pisca_led ****
+nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
+Info: Linking display.elf
+nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/ -msmallc  -Wl,-Map=display.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o display.elf obj/default/hello_world_small.o -lm -msys-lib=m
+nios2-elf-insert.exe display.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1769785079 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
+Info: (display.elf) 1436 Bytes program size (code + initialized data).
+Info:               18 KBytes free for stack + heap.
+Info: Creating display.objdump
+nios2-elf-objdump.exe --disassemble --syms --all-header --source display.elf >display.objdump
+[display build complete]
+14:40:48 **** Incremental Build of configuration Nios II for project display_bsp ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
 [BSP build complete]
-make: Warning: File 'pisca_led.elf' has modification time 5.5 s in the future
-[pisca_led build complete]
-make: warning:  Clock skew detected.  Your build may be incomplete.
-09:10:18 **** Build of configuration Nios II for project pisca_led ****
+14:40:56 **** Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
-hello_world_small.c: In function 'main':
-hello_world_small.c:61:9: warning: unused variable 'contagem_main' [-Wunused-variable]
-   61 |     int contagem_main = 0;
-      |         ^~~~~~~~~~~~~
-Info: Linking pisca_led.elf
-nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -msmallc  -Wl,-Map=pisca_led.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o pisca_led.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert.exe pisca_led.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1768872009 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
-Info: (pisca_led.elf) 1452 Bytes program size (code + initialized data).
-Info:                 18 KBytes free for stack + heap.
-Info: Creating pisca_led.objdump
-nios2-elf-objdump.exe --disassemble --syms --all-header --source pisca_led.elf >pisca_led.objdump
-[pisca_led build complete]
-09:10:24 **** Incremental Build of configuration Nios II for project pisca_led ****
+[display build complete]
+14:40:58 **** Incremental Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
-make: Warning: File 'pisca_led.elf' has modification time 8.3 s in the future
-[pisca_led build complete]
-make: warning:  Clock skew detected.  Your build may be incomplete.
-09:12:28 **** Build of configuration Nios II for project pisca_led ****
+[display build complete]
+14:42:16 **** Incremental Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+[BSP build complete]
+[display build complete]
+14:42:21 **** Incremental Build of configuration Nios II for project display_bsp ****
+wsl make all 
+[BSP build complete]
+14:42:28 **** Build of configuration Nios II for project display ****
+wsl make all 
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+[BSP build complete]
+[display build complete]
+14:42:30 **** Incremental Build of configuration Nios II for project display ****
+wsl make all 
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+[BSP build complete]
+[display build complete]
+14:44:31 **** Incremental Build of configuration Nios II for project display ****
+wsl make all 
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
 Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
-hello_world_small.c: In function 'main':
-hello_world_small.c:63:9: warning: unused variable 'contagem_main' [-Wunused-variable]
-   63 |     int contagem_main = 0;
-      |         ^~~~~~~~~~~~~
-Info: Linking pisca_led.elf
-nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -msmallc  -Wl,-Map=pisca_led.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o pisca_led.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert.exe pisca_led.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1768872009 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
-Info: (pisca_led.elf) 1464 Bytes program size (code + initialized data).
-Info:                 18 KBytes free for stack + heap.
-Info: Creating pisca_led.objdump
-nios2-elf-objdump.exe --disassemble --syms --all-header --source pisca_led.elf >pisca_led.objdump
-[pisca_led build complete]
-09:12:39 **** Incremental Build of configuration Nios II for project pisca_led ****
-wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-[BSP build complete]
-make: Warning: File 'pisca_led.elf' has modification time 8.2 s in the future
-[pisca_led build complete]
-make: warning:  Clock skew detected.  Your build may be incomplete.
-09:13:12 **** Build of configuration Nios II for project pisca_led ****
-wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-[BSP build complete]
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
-hello_world_small.c: In function 'main':
-hello_world_small.c:63:9: warning: unused variable 'contagem_main' [-Wunused-variable]
-   63 |     int contagem_main = 0;
-      |         ^~~~~~~~~~~~~
-Info: Linking pisca_led.elf
-nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -msmallc  -Wl,-Map=pisca_led.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o pisca_led.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert.exe pisca_led.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1768872009 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
-Info: (pisca_led.elf) 1464 Bytes program size (code + initialized data).
-Info:                 18 KBytes free for stack + heap.
-Info: Creating pisca_led.objdump
-nios2-elf-objdump.exe --disassemble --syms --all-header --source pisca_led.elf >pisca_led.objdump
-[pisca_led build complete]
-09:13:21 **** Incremental Build of configuration Nios II for project pisca_led ****
-wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-[BSP build complete]
-make: Warning: File 'pisca_led.elf' has modification time 6.5 s in the future
-[pisca_led build complete]
-make: warning:  Clock skew detected.  Your build may be incomplete.
-09:15:30 **** Build of configuration Nios II for project pisca_led ****
-wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-[BSP build complete]
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
-hello_world_small.c: In function 'main':
-hello_world_small.c:63:9: warning: unused variable 'contagem_main' [-Wunused-variable]
-   63 |     int contagem_main = 0;
-      |         ^~~~~~~~~~~~~
-Info: Linking pisca_led.elf
-nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -msmallc  -Wl,-Map=pisca_led.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o pisca_led.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert.exe pisca_led.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1768872009 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
-Info: (pisca_led.elf) 1464 Bytes program size (code + initialized data).
-Info:                 18 KBytes free for stack + heap.
-Info: Creating pisca_led.objdump
-nios2-elf-objdump.exe --disassemble --syms --all-header --source pisca_led.elf >pisca_led.objdump
-[pisca_led build complete]
-09:15:41 **** Incremental Build of configuration Nios II for project pisca_led ****
-wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-[BSP build complete]
-make: Warning: File 'pisca_led.elf' has modification time 8.7 s in the future
-[pisca_led build complete]
-make: warning:  Clock skew detected.  Your build may be incomplete.
-09:18:03 **** Build of configuration Nios II for project pisca_led ****
-wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-[BSP build complete]
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
-hello_world_small.c: In function 'main':
-hello_world_small.c:63:9: warning: unused variable 'contagem_main' [-Wunused-variable]
-   63 |     int contagem_main = 0;
-      |         ^~~~~~~~~~~~~
-Info: Linking pisca_led.elf
-nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -msmallc  -Wl,-Map=pisca_led.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o pisca_led.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert.exe pisca_led.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1768872009 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
-Info: (pisca_led.elf) 1468 Bytes program size (code + initialized data).
-Info:                 18 KBytes free for stack + heap.
-Info: Creating pisca_led.objdump
-nios2-elf-objdump.exe --disassemble --syms --all-header --source pisca_led.elf >pisca_led.objdump
-[pisca_led build complete]
-09:18:13 **** Incremental Build of configuration Nios II for project pisca_led ****
-wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-[BSP build complete]
-make: Warning: File 'pisca_led.elf' has modification time 8.2 s in the future
-[pisca_led build complete]
-make: warning:  Clock skew detected.  Your build may be incomplete.
-09:21:25 **** Build of configuration Nios II for project pisca_led ****
-wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-[BSP build complete]
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
-hello_world_small.c: In function 'main':
-hello_world_small.c:63:9: warning: unused variable 'contagem_main' [-Wunused-variable]
-   63 |     int contagem_main = 0;
-      |         ^~~~~~~~~~~~~
-Info: Linking pisca_led.elf
-nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -msmallc  -Wl,-Map=pisca_led.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o pisca_led.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert.exe pisca_led.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1768872009 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
-Info: (pisca_led.elf) 1468 Bytes program size (code + initialized data).
-Info:                 18 KBytes free for stack + heap.
-Info: Creating pisca_led.objdump
-nios2-elf-objdump.exe --disassemble --syms --all-header --source pisca_led.elf >pisca_led.objdump
-[pisca_led build complete]
-09:21:33 **** Incremental Build of configuration Nios II for project pisca_led ****
-wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-[BSP build complete]
-make: Warning: File 'pisca_led.elf' has modification time 7.2 s in the future
-[pisca_led build complete]
-make: warning:  Clock skew detected.  Your build may be incomplete.
-09:23:18 **** Build of configuration Nios II for project pisca_led ****
-wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-[BSP build complete]
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
-hello_world_small.c: In function 'main':
-hello_world_small.c:63:9: warning: unused variable 'contagem_main' [-Wunused-variable]
-   63 |     int contagem_main = 0;
-      |         ^~~~~~~~~~~~~
-Info: Linking pisca_led.elf
-nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -msmallc  -Wl,-Map=pisca_led.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o pisca_led.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert.exe pisca_led.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1768872009 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
-Info: (pisca_led.elf) 1468 Bytes program size (code + initialized data).
-Info:                 18 KBytes free for stack + heap.
-Info: Creating pisca_led.objdump
-nios2-elf-objdump.exe --disassemble --syms --all-header --source pisca_led.elf >pisca_led.objdump
-[pisca_led build complete]
-09:23:26 **** Incremental Build of configuration Nios II for project pisca_led ****
-wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-[BSP build complete]
-make: Warning: File 'pisca_led.elf' has modification time 8.7 s in the future
-[pisca_led build complete]
-make: warning:  Clock skew detected.  Your build may be incomplete.
-09:23:47 **** Build of configuration Nios II for project pisca_led ****
-wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-[BSP build complete]
-make: Warning: File 'hello_world_small.c' has modification time 1.6 s in the future
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
-hello_world_small.c: In function 'main':
-hello_world_small.c:63:9: warning: unused variable 'contagem_main' [-Wunused-variable]
-   63 |     int contagem_main = 0;
-      |         ^~~~~~~~~~~~~
-Info: Linking pisca_led.elf
-nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -msmallc  -Wl,-Map=pisca_led.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o pisca_led.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert.exe pisca_led.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1768872009 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
-Info: (pisca_led.elf) 1464 Bytes program size (code + initialized data).
-Info:                 18 KBytes free for stack + heap.
-Info: Creating pisca_led.objdump
-nios2-elf-objdump.exe --disassemble --syms --all-header --source pisca_led.elf >pisca_led.objdump
-[pisca_led build complete]
-make: warning:  Clock skew detected.  Your build may be incomplete.
-09:23:52 **** Incremental Build of configuration Nios II for project pisca_led ****
-wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-[BSP build complete]
-make: Warning: File 'pisca_led.elf' has modification time 9 s in the future
-[pisca_led build complete]
-make: warning:  Clock skew detected.  Your build may be incomplete.
-09:58:17 **** Incremental Build of configuration Nios II for project pisca_led ****
-wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-[BSP build complete]
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
-In file included from hello_world_small.c:2:
-c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/system.h:152:20: warning: initialization of 'int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
-  152 | #define HEX_0_BASE 0x110b0
-      |                    ^~~~~~~
-hello_world_small.c:15:11: note: in expansion of macro 'HEX_0_BASE'
-   15 | int *h0 = HEX_0_BASE;
-      |           ^~~~~~~~~~
-c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/system.h:179:20: warning: initialization of 'int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
-  179 | #define HEX_1_BASE 0x110a0
-      |                    ^~~~~~~
-hello_world_small.c:16:11: note: in expansion of macro 'HEX_1_BASE'
-   16 | int *h1 = HEX_1_BASE;
-      |           ^~~~~~~~~~
-c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/system.h:206:20: warning: initialization of 'int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
-  206 | #define HEX_2_BASE 0x11090
-      |                    ^~~~~~~
-hello_world_small.c:17:11: note: in expansion of macro 'HEX_2_BASE'
-   17 | int *h2 = HEX_2_BASE;
-      |           ^~~~~~~~~~
-c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/system.h:233:20: warning: initialization of 'int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
-  233 | #define HEX_3_BASE 0x11080
-      |                    ^~~~~~~
-hello_world_small.c:18:11: note: in expansion of macro 'HEX_3_BASE'
-   18 | int *h3 = HEX_3_BASE;
-      |           ^~~~~~~~~~
-hello_world_small.c: In function 'main':
-hello_world_small.c:133:9: warning: unused variable 'contagem_main' [-Wunused-variable]
-  133 |     int contagem_main = 0;
-      |         ^~~~~~~~~~~~~
-hello_world_small.c:106:14: warning: unused variable 'p' [-Wunused-variable]
-  106 |         int *p;
-      |              ^
-Info: Linking pisca_led.elf
-nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -msmallc  -Wl,-Map=pisca_led.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o pisca_led.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert.exe pisca_led.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1768872009 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
-Info: (pisca_led.elf) 1840 Bytes program size (code + initialized data).
-Info:                 17 KBytes free for stack + heap.
-Info: Creating pisca_led.objdump
-nios2-elf-objdump.exe --disassemble --syms --all-header --source pisca_led.elf >pisca_led.objdump
-[pisca_led build complete]
-09:58:26 **** Build of configuration Nios II for project pisca_led_bsp ****
+nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
+Info: Linking display.elf
+nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/ -msmallc  -Wl,-Map=display.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o display.elf obj/default/hello_world_small.o -lm -msys-lib=m
+nios2-elf-insert.exe display.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1769785079 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
+Info: (display.elf) 1468 Bytes program size (code + initialized data).
+Info:               18 KBytes free for stack + heap.
+Info: Creating display.objdump
+nios2-elf-objdump.exe --disassemble --syms --all-header --source display.elf >display.objdump
+[display build complete]
+14:44:39 **** Incremental Build of configuration Nios II for project display_bsp ****
 wsl make all 
 [BSP build complete]
-09:58:54 **** Build of configuration Nios II for project pisca_led ****
+14:44:53 **** Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
-[pisca_led build complete]
-09:58:59 **** Incremental Build of configuration Nios II for project pisca_led ****
+[display build complete]
+14:44:54 **** Incremental Build of configuration Nios II for project display ****
 wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display_bsp/
 [BSP build complete]
-[pisca_led build complete]
-10:00:03 **** Build of configuration Nios II for project pisca_led ****
-wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-[BSP build complete]
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
-In file included from hello_world_small.c:2:
-c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/system.h:152:20: warning: initialization of 'int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
-  152 | #define HEX_0_BASE 0x110b0
-      |                    ^~~~~~~
-hello_world_small.c:15:11: note: in expansion of macro 'HEX_0_BASE'
-   15 | int *h0 = HEX_0_BASE;
-      |           ^~~~~~~~~~
-c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/system.h:179:20: warning: initialization of 'int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
-  179 | #define HEX_1_BASE 0x110a0
-      |                    ^~~~~~~
-hello_world_small.c:16:11: note: in expansion of macro 'HEX_1_BASE'
-   16 | int *h1 = HEX_1_BASE;
-      |           ^~~~~~~~~~
-c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/system.h:206:20: warning: initialization of 'int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
-  206 | #define HEX_2_BASE 0x11090
-      |                    ^~~~~~~
-hello_world_small.c:17:11: note: in expansion of macro 'HEX_2_BASE'
-   17 | int *h2 = HEX_2_BASE;
-      |           ^~~~~~~~~~
-c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/system.h:233:20: warning: initialization of 'int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
-  233 | #define HEX_3_BASE 0x11080
-      |                    ^~~~~~~
-hello_world_small.c:18:11: note: in expansion of macro 'HEX_3_BASE'
-   18 | int *h3 = HEX_3_BASE;
-      |           ^~~~~~~~~~
-hello_world_small.c: In function 'main':
-hello_world_small.c:134:9: warning: unused variable 'contagem_main' [-Wunused-variable]
-  134 |     int contagem_main = 0;
-      |         ^~~~~~~~~~~~~
-hello_world_small.c:107:14: warning: unused variable 'p' [-Wunused-variable]
-  107 |         int *p;
-      |              ^
-Info: Linking pisca_led.elf
-nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -msmallc  -Wl,-Map=pisca_led.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o pisca_led.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert.exe pisca_led.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1768872009 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
-Info: (pisca_led.elf) 1848 Bytes program size (code + initialized data).
-Info:                 17 KBytes free for stack + heap.
-Info: Creating pisca_led.objdump
-nios2-elf-objdump.exe --disassemble --syms --all-header --source pisca_led.elf >pisca_led.objdump
-[pisca_led build complete]
-10:00:09 **** Incremental Build of configuration Nios II for project pisca_led ****
-wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-[BSP build complete]
-[pisca_led build complete]
-10:02:15 **** Build of configuration Nios II for project pisca_led ****
-wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-[BSP build complete]
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
-In file included from hello_world_small.c:2:
-c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/system.h:152:20: warning: initialization of 'int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
-  152 | #define HEX_0_BASE 0x110b0
-      |                    ^~~~~~~
-hello_world_small.c:15:11: note: in expansion of macro 'HEX_0_BASE'
-   15 | int *h0 = HEX_0_BASE;
-      |           ^~~~~~~~~~
-c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/system.h:179:20: warning: initialization of 'int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
-  179 | #define HEX_1_BASE 0x110a0
-      |                    ^~~~~~~
-hello_world_small.c:16:11: note: in expansion of macro 'HEX_1_BASE'
-   16 | int *h1 = HEX_1_BASE;
-      |           ^~~~~~~~~~
-c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/system.h:206:20: warning: initialization of 'int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
-  206 | #define HEX_2_BASE 0x11090
-      |                    ^~~~~~~
-hello_world_small.c:17:11: note: in expansion of macro 'HEX_2_BASE'
-   17 | int *h2 = HEX_2_BASE;
-      |           ^~~~~~~~~~
-c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/system.h:233:20: warning: initialization of 'int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
-  233 | #define HEX_3_BASE 0x11080
-      |                    ^~~~~~~
-hello_world_small.c:18:11: note: in expansion of macro 'HEX_3_BASE'
-   18 | int *h3 = HEX_3_BASE;
-      |           ^~~~~~~~~~
-hello_world_small.c: In function 'main':
-hello_world_small.c:134:9: warning: unused variable 'contagem_main' [-Wunused-variable]
-  134 |     int contagem_main = 0;
-      |         ^~~~~~~~~~~~~
-hello_world_small.c:107:14: warning: unused variable 'p' [-Wunused-variable]
-  107 |         int *p;
-      |              ^
-Info: Linking pisca_led.elf
-nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -msmallc  -Wl,-Map=pisca_led.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o pisca_led.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert.exe pisca_led.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1768872009 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
-Info: (pisca_led.elf) 1840 Bytes program size (code + initialized data).
-Info:                 17 KBytes free for stack + heap.
-Info: Creating pisca_led.objdump
-nios2-elf-objdump.exe --disassemble --syms --all-header --source pisca_led.elf >pisca_led.objdump
-[pisca_led build complete]
-10:02:24 **** Incremental Build of configuration Nios II for project pisca_led ****
-wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-[BSP build complete]
-make: Warning: File 'pisca_led.elf' has modification time 6.9 s in the future
-[pisca_led build complete]
-make: warning:  Clock skew detected.  Your build may be incomplete.
-10:03:25 **** Build of configuration Nios II for project pisca_led ****
-wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-[BSP build complete]
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
-In file included from hello_world_small.c:2:
-c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/system.h:152:20: warning: initialization of 'int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
-  152 | #define HEX_0_BASE 0x110b0
-      |                    ^~~~~~~
-hello_world_small.c:15:11: note: in expansion of macro 'HEX_0_BASE'
-   15 | int *h0 = HEX_0_BASE;
-      |           ^~~~~~~~~~
-c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/system.h:179:20: warning: initialization of 'int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
-  179 | #define HEX_1_BASE 0x110a0
-      |                    ^~~~~~~
-hello_world_small.c:16:11: note: in expansion of macro 'HEX_1_BASE'
-   16 | int *h1 = HEX_1_BASE;
-      |           ^~~~~~~~~~
-c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/system.h:206:20: warning: initialization of 'int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
-  206 | #define HEX_2_BASE 0x11090
-      |                    ^~~~~~~
-hello_world_small.c:17:11: note: in expansion of macro 'HEX_2_BASE'
-   17 | int *h2 = HEX_2_BASE;
-      |           ^~~~~~~~~~
-c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/system.h:233:20: warning: initialization of 'int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
-  233 | #define HEX_3_BASE 0x11080
-      |                    ^~~~~~~
-hello_world_small.c:18:11: note: in expansion of macro 'HEX_3_BASE'
-   18 | int *h3 = HEX_3_BASE;
-      |           ^~~~~~~~~~
-hello_world_small.c: In function 'main':
-hello_world_small.c:134:9: warning: unused variable 'contagem_main' [-Wunused-variable]
-  134 |     int contagem_main = 0;
-      |         ^~~~~~~~~~~~~
-hello_world_small.c:107:14: warning: unused variable 'p' [-Wunused-variable]
-  107 |         int *p;
-      |              ^
-Info: Linking pisca_led.elf
-nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -msmallc  -Wl,-Map=pisca_led.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o pisca_led.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert.exe pisca_led.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1768872009 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
-Info: (pisca_led.elf) 1840 Bytes program size (code + initialized data).
-Info:                 17 KBytes free for stack + heap.
-Info: Creating pisca_led.objdump
-nios2-elf-objdump.exe --disassemble --syms --all-header --source pisca_led.elf >pisca_led.objdump
-[pisca_led build complete]
-10:03:33 **** Incremental Build of configuration Nios II for project pisca_led ****
-wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-[BSP build complete]
-[pisca_led build complete]
-10:06:25 **** Build of configuration Nios II for project pisca_led ****
-wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-[BSP build complete]
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
-In file included from hello_world_small.c:2:
-c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/system.h:152:20: warning: initialization of 'int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
-  152 | #define HEX_0_BASE 0x110b0
-      |                    ^~~~~~~
-hello_world_small.c:15:11: note: in expansion of macro 'HEX_0_BASE'
-   15 | int *h0 = HEX_0_BASE;
-      |           ^~~~~~~~~~
-c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/system.h:179:20: warning: initialization of 'int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
-  179 | #define HEX_1_BASE 0x110a0
-      |                    ^~~~~~~
-hello_world_small.c:16:11: note: in expansion of macro 'HEX_1_BASE'
-   16 | int *h1 = HEX_1_BASE;
-      |           ^~~~~~~~~~
-c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/system.h:206:20: warning: initialization of 'int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
-  206 | #define HEX_2_BASE 0x11090
-      |                    ^~~~~~~
-hello_world_small.c:17:11: note: in expansion of macro 'HEX_2_BASE'
-   17 | int *h2 = HEX_2_BASE;
-      |           ^~~~~~~~~~
-c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/system.h:233:20: warning: initialization of 'int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
-  233 | #define HEX_3_BASE 0x11080
-      |                    ^~~~~~~
-hello_world_small.c:18:11: note: in expansion of macro 'HEX_3_BASE'
-   18 | int *h3 = HEX_3_BASE;
-      |           ^~~~~~~~~~
-hello_world_small.c: In function 'main':
-hello_world_small.c:134:9: warning: unused variable 'contagem_main' [-Wunused-variable]
-  134 |     int contagem_main = 0;
-      |         ^~~~~~~~~~~~~
-hello_world_small.c:107:14: warning: unused variable 'p' [-Wunused-variable]
-  107 |         int *p;
-      |              ^
-Info: Linking pisca_led.elf
-nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -msmallc  -Wl,-Map=pisca_led.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o pisca_led.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert.exe pisca_led.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1768872009 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
-Info: (pisca_led.elf) 1840 Bytes program size (code + initialized data).
-Info:                 17 KBytes free for stack + heap.
-Info: Creating pisca_led.objdump
-nios2-elf-objdump.exe --disassemble --syms --all-header --source pisca_led.elf >pisca_led.objdump
-[pisca_led build complete]
-10:06:45 **** Incremental Build of configuration Nios II for project pisca_led ****
-wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-[BSP build complete]
-[pisca_led build complete]
-10:08:30 **** Build of configuration Nios II for project pisca_led ****
-wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-[BSP build complete]
-make: Warning: File 'hello_world_small.c' has modification time 0.31 s in the future
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc.exe -xc -MP -MMD -c -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//HAL/inc -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -Ic:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world_small.o" "hello_world_small.c"
-In file included from hello_world_small.c:2:
-c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/system.h:152:20: warning: initialization of 'int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
-  152 | #define HEX_0_BASE 0x110b0
-      |                    ^~~~~~~
-hello_world_small.c:15:11: note: in expansion of macro 'HEX_0_BASE'
-   15 | int *h0 = HEX_0_BASE;
-      |           ^~~~~~~~~~
-c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/system.h:179:20: warning: initialization of 'int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
-  179 | #define HEX_1_BASE 0x110a0
-      |                    ^~~~~~~
-hello_world_small.c:16:11: note: in expansion of macro 'HEX_1_BASE'
-   16 | int *h1 = HEX_1_BASE;
-      |           ^~~~~~~~~~
-c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/system.h:206:20: warning: initialization of 'int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
-  206 | #define HEX_2_BASE 0x11090
-      |                    ^~~~~~~
-hello_world_small.c:17:11: note: in expansion of macro 'HEX_2_BASE'
-   17 | int *h2 = HEX_2_BASE;
-      |           ^~~~~~~~~~
-c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/system.h:233:20: warning: initialization of 'int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
-  233 | #define HEX_3_BASE 0x11080
-      |                    ^~~~~~~
-hello_world_small.c:18:11: note: in expansion of macro 'HEX_3_BASE'
-   18 | int *h3 = HEX_3_BASE;
-      |           ^~~~~~~~~~
-hello_world_small.c: In function 'main':
-hello_world_small.c:134:9: warning: unused variable 'contagem_main' [-Wunused-variable]
-  134 |     int contagem_main = 0;
-      |         ^~~~~~~~~~~~~
-hello_world_small.c:107:14: warning: unused variable 'p' [-Wunused-variable]
-  107 |         int *p;
-      |              ^
-Info: Linking pisca_led.elf
-nios2-elf-g++.exe -T'c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//linker.x' -msys-crt0='c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -Lc:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/ -msmallc  -Wl,-Map=pisca_led.map   -Os -g -Wall  -mno-hw-div -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o pisca_led.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert.exe pisca_led.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x110d0 --timestamp 1768872009 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name myhardware --quartus_project_dir "c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI" --jdi ../..//output_files/hardware.jdi --sopcinfo c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
-Info: (pisca_led.elf) 1840 Bytes program size (code + initialized data).
-Info:                 17 KBytes free for stack + heap.
-Info: Creating pisca_led.objdump
-nios2-elf-objdump.exe --disassemble --syms --all-header --source pisca_led.elf >pisca_led.objdump
-[pisca_led build complete]
-make: warning:  Clock skew detected.  Your build may be incomplete.
-10:08:37 **** Incremental Build of configuration Nios II for project pisca_led ****
-wsl make all 
-Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/pisca_led_bsp/
-[BSP build complete]
-make: Warning: File 'pisca_led.elf' has modification time 8.5 s in the future
-[pisca_led build complete]
-make: warning:  Clock skew detected.  Your build may be incomplete.
+[display build complete]

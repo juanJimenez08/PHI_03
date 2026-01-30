@@ -1,5 +1,5 @@
 Assembler report for hardware
-Mon Jan 19 22:48:08 2026
+Fri Jan 30 14:34:10 2026
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -39,7 +39,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Jan 19 22:48:08 2026 ;
+; Assembler Status      ; Successful - Fri Jan 30 14:34:10 2026 ;
 ; Revision Name         ; hardware                              ;
 ; Top-level Entity Name ; hardware                              ;
 ; Family                ; Cyclone V                             ;
@@ -78,8 +78,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------+---------------------------------------------------------------------------------------------+
 ; Option         ; Setting                                                                                     ;
 +----------------+---------------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x018FEA14                                                                                  ;
-; Checksum       ; 0x018FEA14                                                                                  ;
+; JTAG usercode  ; 0x01A4B91D                                                                                  ;
+; Checksum       ; 0x01A4B91D                                                                                  ;
 +----------------+---------------------------------------------------------------------------------------------+
 
 
@@ -89,13 +89,13 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Mon Jan 19 22:48:03 2026
+    Info: Processing started: Fri Jan 30 14:34:05 2026
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off hardware -c hardware
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 5250 megabytes
-    Info: Processing ended: Mon Jan 19 22:48:08 2026
+    Info: Processing ended: Fri Jan 30 14:34:10 2026
     Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:05
 

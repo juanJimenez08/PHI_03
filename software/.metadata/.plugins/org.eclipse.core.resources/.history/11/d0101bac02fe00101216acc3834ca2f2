@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include "system.h"  // Arquivo gerado pelo BSP com os endereços
+#include "io.h"      // Biblioteca de leitura/escrita de hardware
+
+// IMPORTANTE:
+// Verifique no seu arquivo "system.h" qual o nome exato do seu componente.
+// Geralmente é algo como SCROLLER_AVALON_0_BASE ou MEU_DISPLAY_BASE.
+// Substitua o nome abaixo se for diferente.
+#ifndef SCROLLER_AVALLON_0_BASE
+#define SCROLLER_AVALLON_0_BASE 0x2000 // Exemplo, o system.h vai corrigir isso
+#endif
+
+int main()
+{
+    printf("--- Teste do Scroller VHDL ---\n");
+
+    // A frase tem que preencher o buffer. O nosso VHDL tem tamanho 32.
+    // Use espaços para dar o efeito de letreiro passando.
+    char minha_frase[32] = "   abcd  ";
+
+    int i;
+
+    printf("Enviando frase para o hardware...\n");
+
+    // Loop para escrever caractere por caractere na memória do periférico
+    for(i = 0; i < 32; i++) {
+        // IOWR_8DIRECT(BASE, OFFSET, DADO)
+        // Escrevemos 1 byte (char) diretamente no endereço base + deslocamento i
+        IOWR_8DIRECT(SCROLLER_AVALLON_0_BASE, i, minha_frase[i]);
+    }
+
+    printf("Frase enviada com sucesso!\n");
+    printf("Agora o hardware assume. Teste os botoes da placa:\n");
+    printf("BTN 0: Pausa/Play\n");
+    printf("BTN 1: Acelera\n");
+    printf("BTN 2: Desacelera\n");
+
+    while(1) {
+        // O processador fica livre!
+        // Você pode fazer outras contas aqui que o display não vai travar.
+    }
+
+    return 0;
+}
