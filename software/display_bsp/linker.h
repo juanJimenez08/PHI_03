@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'myhardware'
  * SOPC Builder design path: c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
  *
- * Generated: Fri Jan 30 14:02:51 BRT 2026
+ * Generated: Fri Jan 30 16:16:59 BRT 2026
  */
 
 /*

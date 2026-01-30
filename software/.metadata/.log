@@ -1,4 +1,4 @@
-!SESSION 2026-01-30 14:02:00.103 -----------------------------------------------
+!SESSION 2026-01-30 16:15:48.138 -----------------------------------------------
 eclipse.buildId=4.5.2.M20160212-1500
 java.version=1.8.0_392
 java.vendor=Temurin
@@ -6,7 +6,7 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pt_BR
 Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/23.1std/nios2eds/bin/eclipse_nios2/plugin_customization.ini
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/23.1std/nios2eds/bin/eclipse_nios2/plugin_customization.ini
 
-!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2026-01-30 14:02:11.842
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2026-01-30 16:16:07.558
 !MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
 !STACK 0
 com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
@@ -25,229 +25,23 @@ Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING
 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
 	... 9 more
 
-!ENTRY org.eclipse.cdt.core 1 0 2026-01-30 14:02:55.397
-!MESSAGE Indexed 'display_bsp' (89 sources, 196 headers) in 2,43 sec: 6.151 declarations; 9.937 references; 18 unresolved inclusions; 3 syntax errors; 59 unresolved names (0,37%)
+!ENTRY org.eclipse.cdt.core 1 0 2026-01-30 16:17:02.894
+!MESSAGE Indexed 'display_bsp' (89 sources, 198 headers) in 2,56 sec: 6.298 declarations; 10.098 references; 19 unresolved inclusions; 3 syntax errors; 59 unresolved names (0,36%)
 
-!ENTRY org.eclipse.cdt.core 1 0 2026-01-30 14:02:56.014
+!ENTRY org.eclipse.cdt.core 1 0 2026-01-30 16:17:03.487
 !MESSAGE Indexed 'display' (1 sources, 0 headers) in 0,004 sec: 1 declarations; 1 references; 1 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
-!SESSION 2026-01-30 14:14:01.249 -----------------------------------------------
-eclipse.buildId=4.5.2.M20160212-1500
-java.version=1.8.0_392
-java.vendor=Temurin
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pt_BR
-Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/23.1std/nios2eds/bin/eclipse_nios2/plugin_customization.ini
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/23.1std/nios2eds/bin/eclipse_nios2/plugin_customization.ini
 
-!ENTRY org.eclipse.core.resources 2 10035 2026-01-30 14:14:06.213
-!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 16:19:28.903
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --sidp=0x110d0 --id=0x0 --timestamp=1769799999]
 
-!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2026-01-30 14:14:13.263
-!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
-!STACK 0
-com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
-	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
-	at com.google.gson.Gson.fromJson(Gson.java:803)
-	at com.google.gson.Gson.fromJson(Gson.java:768)
-	at com.google.gson.Gson.fromJson(Gson.java:717)
-	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
-	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
-	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
-	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
-	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
-	at java.lang.Thread.run(Thread.java:750)
-Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
-	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
-	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
-	... 9 more
+!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 16:19:30.612
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --sidp=0x110d0 --id=0x0 --timestamp=1769799999 /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display/display.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:14:25.861
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=' --instance=-1 --stop --sidp=0x110d0 --id=0x0 --timestamp=1769785079]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2026-01-30 14:14:27.144
-!MESSAGE Failed Executing: [wsl nios2-download, '--cable=', --instance=-1, --stop, --sidp=0x110d0, --id=0x0, --timestamp=1769785079] return code: 16
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:14:27.493
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=' --instance=-1 --go --sidp=0x110d0 --id=0x0 --timestamp=1769785079 /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display/display.elf]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2026-01-30 14:14:29.108
-!MESSAGE Failed Executing: [wsl nios2-download, '--cable=', --instance=-1, --go, --sidp=0x110d0, --id=0x0, --timestamp=1769785079, /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display/display.elf] return code: 16
-
-!ENTRY com.altera.sbtgui.launch 4 0 2026-01-30 14:14:29.113
-!MESSAGE Downloading ELF Process failed
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:14:57.004
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=' --instance=-1 --stop --sidp=0x110d0 --id=0x0 --timestamp=1769785079]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2026-01-30 14:14:58.265
-!MESSAGE Failed Executing: [wsl nios2-download, '--cable=', --instance=-1, --stop, --sidp=0x110d0, --id=0x0, --timestamp=1769785079] return code: 16
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:14:58.589
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=' --instance=-1 --go --sidp=0x110d0 --id=0x0 --timestamp=1769785079 /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display/display.elf]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2026-01-30 14:14:59.926
-!MESSAGE Failed Executing: [wsl nios2-download, '--cable=', --instance=-1, --go, --sidp=0x110d0, --id=0x0, --timestamp=1769785079, /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display/display.elf] return code: 16
-
-!ENTRY com.altera.sbtgui.launch 4 0 2026-01-30 14:14:59.928
-!MESSAGE Downloading ELF Process failed
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:15:38.650
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=' --instance=-1 --stop --sidp=0x110d0 --id=0x0 --timestamp=1769785079]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2026-01-30 14:15:39.911
-!MESSAGE Failed Executing: [wsl nios2-download, '--cable=', --instance=-1, --stop, --sidp=0x110d0, --id=0x0, --timestamp=1769785079] return code: 16
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:15:40.241
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=' --instance=-1 --go --sidp=0x110d0 --id=0x0 --timestamp=1769785079 /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display/display.elf]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2026-01-30 14:15:41.563
-!MESSAGE Failed Executing: [wsl nios2-download, '--cable=', --instance=-1, --go, --sidp=0x110d0, --id=0x0, --timestamp=1769785079, /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display/display.elf] return code: 16
-
-!ENTRY com.altera.sbtgui.launch 4 0 2026-01-30 14:15:41.565
-!MESSAGE Downloading ELF Process failed
-
-!ENTRY com.altera.sbtgui.launch 4 0 2026-01-30 14:16:04.035
-!MESSAGE Unable to validate connection settings.
-!STACK 0
-java.lang.Exception: Connected system ID hash not found on target at expected base address.
-	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.assertTrue(SystemConsoleConnectionModel.java:645)
-	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateSystemId(SystemConsoleConnectionModel.java:589)
-	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateConnectionSettings(SystemConsoleConnectionModel.java:511)
-	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.launch(AbstractNios2CLaunchDelegate.java:115)
-	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.launch(Nios2HardwareLaunchDelegate.java:98)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-
-!ENTRY com.altera.sbtgui.launch 4 0 2026-01-30 14:16:04.038
-!MESSAGE Unable to validate connection settings.
-!STACK 0
-java.lang.Exception: Connected system ID hash not found on target at expected base address.
-	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.assertTrue(SystemConsoleConnectionModel.java:645)
-	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateSystemId(SystemConsoleConnectionModel.java:589)
-	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateConnectionSettings(SystemConsoleConnectionModel.java:511)
-	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.launch(AbstractNios2CLaunchDelegate.java:115)
-	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.launch(Nios2HardwareLaunchDelegate.java:98)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:19:13.499
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=' --instance=-1 --stop --sidp=0x110d0 --id=0x0 --timestamp=1769785079]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2026-01-30 14:19:14.756
-!MESSAGE Failed Executing: [wsl nios2-download, '--cable=', --instance=-1, --stop, --sidp=0x110d0, --id=0x0, --timestamp=1769785079] return code: 16
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:19:15.096
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=' --instance=-1 --go --sidp=0x110d0 --id=0x0 --timestamp=1769785079 /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display/display.elf]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2026-01-30 14:19:16.419
-!MESSAGE Failed Executing: [wsl nios2-download, '--cable=', --instance=-1, --go, --sidp=0x110d0, --id=0x0, --timestamp=1769785079, /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display/display.elf] return code: 16
-
-!ENTRY com.altera.sbtgui.launch 4 0 2026-01-30 14:19:16.421
-!MESSAGE Downloading ELF Process failed
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:22:36.789
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=' --instance=-1 --stop --sidp=0x110d0 --id=0x0 --timestamp=1769785079]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2026-01-30 14:22:38.221
-!MESSAGE Failed Executing: [wsl nios2-download, '--cable=', --instance=-1, --stop, --sidp=0x110d0, --id=0x0, --timestamp=1769785079] return code: 16
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:22:38.550
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=' --instance=-1 --go --sidp=0x110d0 --id=0x0 --timestamp=1769785079 /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display/display.elf]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2026-01-30 14:22:39.893
-!MESSAGE Failed Executing: [wsl nios2-download, '--cable=', --instance=-1, --go, --sidp=0x110d0, --id=0x0, --timestamp=1769785079, /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display/display.elf] return code: 16
-
-!ENTRY com.altera.sbtgui.launch 4 0 2026-01-30 14:22:39.895
-!MESSAGE Downloading ELF Process failed
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:24:07.714
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=0x110d0]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:24:09.434
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid --sidp=0x110d0 /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display/display.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:28:11.783
+!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 16:21:07.858
 !MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:28:12.432
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=0x110d0]
+!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 16:21:08.505
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --sidp=0x110d0 --id=0x0 --timestamp=1769799999]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:28:14.176
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid --sidp=0x110d0 /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display/display.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:35:52.295
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:35:53.255
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=0x110d0]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:35:54.983
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid --sidp=0x110d0 /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display/display.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:37:14.008
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:37:14.659
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=0x110d0]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:37:16.349
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid --sidp=0x110d0 /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display/display.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:37:56.187
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:37:56.864
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=0x110d0]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:37:58.568
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid --sidp=0x110d0 /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display/display.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:38:59.934
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:39:00.603
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=0x110d0]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:39:02.294
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid --sidp=0x110d0 /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display/display.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:40:07.081
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:40:07.751
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=0x110d0]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:40:09.483
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid --sidp=0x110d0 /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display/display.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:41:00.076
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:41:00.719
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=0x110d0]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:41:02.401
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid --sidp=0x110d0 /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display/display.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:42:32.378
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:42:33.335
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=0x110d0]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:42:35.048
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid --sidp=0x110d0 /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display/display.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:44:56.691
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:44:57.335
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=0x110d0]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 14:44:59.179
-!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid --sidp=0x110d0 /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display/display.elf]
+!ENTRY com.altera.sbtgui.launch 1 0 2026-01-30 16:21:10.197
+!MESSAGE Executing: [C:\WINDOWS\system32\cmd.exe, /C, wsl nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --sidp=0x110d0 --id=0x0 --timestamp=1769799999 /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/software/display/display.elf]

@@ -16,7 +16,7 @@ int main()
 
     // A frase tem que preencher o buffer. O nosso VHDL tem tamanho 32.
     // Use espaços para dar o efeito de letreiro passando.
-    char minha_frase[32] = "   A  ";
+    char minha_frase[32] = "  A1234576234AAAAAA  ";
 
     int i;
 

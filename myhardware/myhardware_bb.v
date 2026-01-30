@@ -8,15 +8,15 @@ module myhardware (
 	hex4_export,
 	hex5_export,
 	leds_export,
+	meu_display_con_buttons,
+	meu_display_con_hex_out,
 	reset_reset_n,
 	spi_0_MISO,
 	spi_0_MOSI,
 	spi_0_SCLK,
 	spi_0_SS_n,
 	uart_0_rxd,
-	uart_0_txd,
-	meu_display_buttons,
-	meu_display_hex_out);	
+	uart_0_txd);	
 
 	input		clk_clk;
 	output	[6:0]	hex0_export;
@@ -26,6 +26,8 @@ module myhardware (
 	output	[6:0]	hex4_export;
 	output	[6:0]	hex5_export;
 	output	[9:0]	leds_export;
+	input	[2:0]	meu_display_con_buttons;
+	output	[41:0]	meu_display_con_hex_out;
 	input		reset_reset_n;
 	input		spi_0_MISO;
 	output		spi_0_MOSI;
@@ -33,6 +35,4 @@ module myhardware (
 	output		spi_0_SS_n;
 	input		uart_0_rxd;
 	output		uart_0_txd;
-	input	[2:0]	meu_display_buttons;
-	output	[41:0]	meu_display_hex_out;
 endmodule
