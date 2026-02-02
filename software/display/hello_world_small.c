@@ -1,43 +1,72 @@
 #include <stdio.h>
-#include "system.h"  // Arquivo gerado pelo BSP com os endere�os
-#include "io.h"      // Biblioteca de leitura/escrita de hardware
+#include <unistd.h>
+#include "system.h"
+#include "io.h"
 
-// IMPORTANTE:
-// Verifique no seu arquivo "system.h" qual o nome exato do seu componente.
-// Geralmente � algo como SCROLLER_AVALON_0_BASE ou MEU_DISPLAY_BASE.
-// Substitua o nome abaixo se for diferente.
-#ifndef SCROLLER_AVALLON_0_BASE
-#define SCROLLER_AVALLON_0_BASE 0x2000 // Exemplo, o system.h vai corrigir isso
+// =================================================================
+// DEFINIÇÕES DO SISTEMA
+// =================================================================
+// Tente encontrar o nome base no system.h.
+// Geralmente é SCROLLER_AVALON_0_BASE ou similar.
+#ifndef MEU_DISPLAY_BASE
+#define MEU_DISPLAY_BASE SCROLLER_AVALLON_0_BASE
 #endif
+
+// Mapa de Memória (Offsets em Palavras/Words de 32 bits)
+#define ADDR_TEXT_START  0   // Endereços 0 a 31
+#define ADDR_CTRL_REG    32  // Endereço 32: Controle (Bit 0 = Pause)
+#define ADDR_SPEED_REG   33  // Endereço 33: Velocidade Inicial
 
 int main()
 {
-    printf("--- Teste do Scroller VHDL ---\n");
+    printf("\n=== INICIANDO CONFIGURAÇÃO DO SCROLLER ===\n");
 
-    // A frase tem que preencher o buffer. O nosso VHDL tem tamanho 32.
-    // Use espa�os para dar o efeito de letreiro passando.
-    char minha_frase[32] = "  NIVELE - SE  ";
+    // ---------------------------------------------------------
+    // 1. CONFIGURAR VELOCIDADE (Endereço 33)
+    // ---------------------------------------------------------
+    // O clock é 50MHz.
+    // 10.000.000 = 0.2 segundos por movimento (Rápido)
+    // 25.000.000 = 0.5 segundos por movimento (Médio)
+    int velocidade_inicial = 5000000; // Bem rápido
 
+    printf("1. Configurando velocidade para: %d ciclos\n", velocidade_inicial);
+    // Usamos IOWR (Write Word) -> O hardware mapeia isso para o endereço 33
+    IOWR(MEU_DISPLAY_BASE, ADDR_SPEED_REG, velocidade_inicial);
+
+
+    // ---------------------------------------------------------
+    // 2. CONFIGURAR ESTADO (Endereço 32)
+    // ---------------------------------------------------------
+    // Escrever 0 = Rodando
+    // Escrever 1 = Pausado
+    printf("2. Estado Inicial: RODANDO (Play)\n");
+    IOWR(MEU_DISPLAY_BASE, ADDR_CTRL_REG, 0);
+
+
+    // ---------------------------------------------------------
+    // 3. ENVIAR A FRASE (Endereços 0 a 31)
+    // ---------------------------------------------------------
+    char frase[32] = "SETUP PELO NIOS: SUCESSO! 123   ";
+    // (Lembre-se: use exatamente 32 caracteres ou preencha com espaços)
+
+    printf("3. Enviando frase para a memoria do FPGA...\n");
     int i;
-
-    printf("Enviando frase para o hardware...\n");
-
-    // Loop para escrever caractere por caractere na mem�ria do perif�rico
     for(i = 0; i < 32; i++) {
-        // IOWR_8DIRECT(BASE, OFFSET, DADO)
-        // Escrevemos 1 byte (char) diretamente no endere�o base + deslocamento i
-        IOWR(SCROLLER_AVALLON_0_BASE, i, minha_frase[i]);
+        // Escreve caractere por caractere
+        IOWR(MEU_DISPLAY_BASE, ADDR_TEXT_START + i, frase[i]);
     }
 
-    printf("Frase enviada com sucesso!\n");
-    printf("Agora o hardware assume. Teste os botoes da placa:\n");
-    printf("BTN 0: Pausa/Play\n");
-    printf("BTN 1: Acelera\n");
-    printf("BTN 2: Desacelera\n");
+    printf("\n--- CONFIGURAÇÃO FINALIZADA ---\n");
+    printf("A partir de agora, o hardware (VHDL) controla tudo.\n");
+    printf("TESTE OS CONTROLES FISICOS:\n");
+    printf("[SW 0] -> Enable Geral (Se estiver OFF, nada aparece!)\n");
+    printf("[KEY 1] -> Pausa/Play\n");
+    printf("[KEY 2] -> Acelera\n");
+    printf("[KEY 3] -> Desacelera\n");
 
+    // Loop infinito para o processador não "morrer"
     while(1) {
-        // O processador fica livre!
-        // Voc� pode fazer outras contas aqui que o display n�o vai travar.
+        // O processador fica livre! O display roda sozinho no hardware.
     }
 
     return 0;

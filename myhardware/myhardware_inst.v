@@ -9,6 +9,7 @@
 		.leds_export             (<connected-to-leds_export>),             //        leds.export
 		.meu_display_con_buttons (<connected-to-meu_display_con_buttons>), // meu_display.con_buttons
 		.meu_display_con_hex_out (<connected-to-meu_display_con_hex_out>), //            .con_hex_out
+		.meu_display_chave       (<connected-to-meu_display_chave>),       //            .chave
 		.reset_reset_n           (<connected-to-reset_reset_n>),           //       reset.reset_n
 		.spi_0_MISO              (<connected-to-spi_0_MISO>),              //       spi_0.MISO
 		.spi_0_MOSI              (<connected-to-spi_0_MOSI>),              //            .MOSI

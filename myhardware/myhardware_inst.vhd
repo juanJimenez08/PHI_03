@@ -10,6 +10,7 @@
 			leds_export             : out std_logic_vector(9 downto 0);                     -- export
 			meu_display_con_buttons : in  std_logic_vector(2 downto 0)  := (others => 'X'); -- con_buttons
 			meu_display_con_hex_out : out std_logic_vector(41 downto 0);                    -- con_hex_out
+			meu_display_chave       : in  std_logic                     := 'X';             -- chave
 			reset_reset_n           : in  std_logic                     := 'X';             -- reset_n
 			spi_0_MISO              : in  std_logic                     := 'X';             -- MISO
 			spi_0_MOSI              : out std_logic;                                        -- MOSI
@@ -32,6 +33,7 @@
 			leds_export             => CONNECTED_TO_leds_export,             --        leds.export
 			meu_display_con_buttons => CONNECTED_TO_meu_display_con_buttons, -- meu_display.con_buttons
 			meu_display_con_hex_out => CONNECTED_TO_meu_display_con_hex_out, --            .con_hex_out
+			meu_display_chave       => CONNECTED_TO_meu_display_chave,       --            .chave
 			reset_reset_n           => CONNECTED_TO_reset_reset_n,           --       reset.reset_n
 			spi_0_MISO              => CONNECTED_TO_spi_0_MISO,              --       spi_0.MISO
 			spi_0_MOSI              => CONNECTED_TO_spi_0_MOSI,              --            .MOSI

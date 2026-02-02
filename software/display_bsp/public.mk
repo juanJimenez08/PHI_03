@@ -82,11 +82,11 @@ ACDS_VERSION := 23.1
 
 # This following BUILD_NUMBER comment indicates the build number of the tool 
 # used to generate this makefile. 
-# BUILD_NUMBER: 993
+# BUILD_NUMBER: 991
 
 # Qsys--generated SOPCINFO file. Required for resolving node instance ID's with 
 # design component names. 
-SOPCINFO_FILE := c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
+SOPCINFO_FILE := $(ABS_BSP_ROOT_DIR)/../../myhardware.sopcinfo
 
 # Big-Endian operation. 
 # setting BIG_ENDIAN is false
@@ -158,9 +158,9 @@ SOPC_SYSID_FLAG += --sidp=0x110d0
 ELF_PATCH_FLAG  += --sidp 0x110d0
 
 # The SOPC Timestamp 
-# setting SOPC_TIMESTAMP is 1769799999
-SOPC_SYSID_FLAG += --timestamp=1769799999
-ELF_PATCH_FLAG  += --timestamp 1769799999
+# setting SOPC_TIMESTAMP is 1770057383
+SOPC_SYSID_FLAG += --timestamp=1770057383
+ELF_PATCH_FLAG  += --timestamp 1770057383
 
 # Enable JTAG UART driver to recover when host is inactive causing buffer to 
 # full without returning error. Printf will not fail with this recovery. none 

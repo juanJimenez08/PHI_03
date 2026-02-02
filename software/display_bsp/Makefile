@@ -98,10 +98,10 @@ ACDS_VERSION := 23.1
 
 # This following BUILD_NUMBER comment indicates the build number of the tool 
 # used to generate this makefile. 
-# BUILD_NUMBER: 993
+# BUILD_NUMBER: 991
 
 SETTINGS_FILE := settings.bsp
-SOPC_FILE := c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
+SOPC_FILE := ../../myhardware.sopcinfo
 
 #-------------------------------------------------------------------------------
 #                             TOOL & COMMAND DEFINITIONS
@@ -138,7 +138,7 @@ BSP_CFLAGS_DEBUG = -g
 # compiler optimization can remove variables and produce non-sequential 
 # execution of code while debugging. This setting defines the value of 
 # BSP_CFLAGS_OPTIMIZATION in Makefile. 
-BSP_CFLAGS_OPTIMIZATION = '-Os'
+BSP_CFLAGS_OPTIMIZATION = -Os
 
 # C/C++ compiler warning level. "-Wall" is commonly used.This setting defines 
 # the value of BSP_CFLAGS_WARNINGS in Makefile. 

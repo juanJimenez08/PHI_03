@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="myhardware" kind="myhardware" version="1.0" fabric="QSYS">
- <!-- Format version 23.1 993 (Future versions may contain additional information.) -->
- <!-- 2026.01.30.16:06:39 -->
+ <!-- Format version 23.1 991 (Future versions may contain additional information.) -->
+ <!-- 2026.02.02.15:36:23 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1769799999</value>
+  <value>1770057383</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -8263,7 +8263,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="dataSlaveMapParam">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='scroller_avallon_0.avalon_slave_0' start='0x0' end='0x80' type='scroller_avallon.avalon_slave_0' /><slave name='onchip_memory2_0.s1' start='0x8000' end='0xCE20' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x10800' end='0x11000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='spi_0.spi_control_port' start='0x11000' end='0x11020' type='altera_avalon_spi.spi_control_port' /><slave name='uart_0.s1' start='0x11020' end='0x11040' type='altera_avalon_uart.s1' /><slave name='timer_0.s1' start='0x11040' end='0x11060' type='altera_avalon_timer.s1' /><slave name='HEX_5.s1' start='0x11060' end='0x11070' type='altera_avalon_pio.s1' /><slave name='HEX_4.s1' start='0x11070' end='0x11080' type='altera_avalon_pio.s1' /><slave name='HEX_3.s1' start='0x11080' end='0x11090' type='altera_avalon_pio.s1' /><slave name='HEX_2.s1' start='0x11090' end='0x110A0' type='altera_avalon_pio.s1' /><slave name='HEX_1.s1' start='0x110A0' end='0x110B0' type='altera_avalon_pio.s1' /><slave name='HEX_0.s1' start='0x110B0' end='0x110C0' type='altera_avalon_pio.s1' /><slave name='LEDS.s1' start='0x110C0' end='0x110D0' type='altera_avalon_pio.s1' /><slave name='sysid_qsys_0.control_slave' start='0x110D0' end='0x110D8' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x110D8' end='0x110E0' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='scroller_avallon_0.avalon_slave_0' start='0x0' end='0x100' type='scroller_avallon.avalon_slave_0' /><slave name='onchip_memory2_0.s1' start='0x8000' end='0xCE20' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x10800' end='0x11000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='spi_0.spi_control_port' start='0x11000' end='0x11020' type='altera_avalon_spi.spi_control_port' /><slave name='uart_0.s1' start='0x11020' end='0x11040' type='altera_avalon_uart.s1' /><slave name='timer_0.s1' start='0x11040' end='0x11060' type='altera_avalon_timer.s1' /><slave name='HEX_5.s1' start='0x11060' end='0x11070' type='altera_avalon_pio.s1' /><slave name='HEX_4.s1' start='0x11070' end='0x11080' type='altera_avalon_pio.s1' /><slave name='HEX_3.s1' start='0x11080' end='0x11090' type='altera_avalon_pio.s1' /><slave name='HEX_2.s1' start='0x11090' end='0x110A0' type='altera_avalon_pio.s1' /><slave name='HEX_1.s1' start='0x110A0' end='0x110B0' type='altera_avalon_pio.s1' /><slave name='HEX_0.s1' start='0x110B0' end='0x110C0' type='altera_avalon_pio.s1' /><slave name='LEDS.s1' start='0x110C0' end='0x110D0' type='altera_avalon_pio.s1' /><slave name='sysid_qsys_0.control_slave' start='0x110D0' end='0x110D8' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x110D8' end='0x110E0' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -8943,7 +8943,7 @@ parameters are a RESULT of the module parameters. -->
     <slaveName>avalon_slave_0</slaveName>
     <name>scroller_avallon_0.avalon_slave_0</name>
     <baseAddress>0</baseAddress>
-    <span>128</span>
+    <span>256</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
@@ -10994,7 +10994,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="addressSpan">
     <type>java.math.BigInteger</type>
-    <value>128</value>
+    <value>256</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -11305,7 +11305,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>avs_address</name>
     <direction>Input</direction>
-    <width>5</width>
+    <width>6</width>
     <role>address</role>
    </port>
   </interface>
@@ -11358,6 +11358,12 @@ parameters are a RESULT of the module parameters. -->
     <direction>Output</direction>
     <width>42</width>
     <role>con_hex_out</role>
+   </port>
+   <port>
+    <name>con_switch</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>chave</role>
    </port>
   </interface>
  </module>
@@ -12242,7 +12248,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1769799999</value>
+   <value>1770057383</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -12262,7 +12268,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1769799999</value>
+   <value>1770057383</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -12278,7 +12284,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1769799999</value>
+   <value>1770057383</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -16788,6 +16794,6 @@ parameters are a RESULT of the module parameters. -->
   <displayName>Reset Connection</displayName>
   <version>23.1</version>
  </plugin>
- <reportVersion>23.1 993</reportVersion>
+ <reportVersion>23.1 991</reportVersion>
  <uniqueIdentifier></uniqueIdentifier>
 </EnsembleReport>

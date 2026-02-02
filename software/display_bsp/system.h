@@ -2,9 +2,9 @@
  * system.h - SOPC Builder system and BSP software package information
  *
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'myhardware'
- * SOPC Builder design path: c:/Users/juane/OneDrive/Documentos/QUARTUS/PROJETO_3_PHI/myhardware.sopcinfo
+ * SOPC Builder design path: ../../myhardware.sopcinfo
  *
- * Generated: Fri Jan 30 16:16:59 BRT 2026
+ * Generated: Mon Feb 02 16:17:34 BRT 2026
  */
 
 /*
@@ -439,7 +439,7 @@
 #define SCROLLER_AVALLON_0_IRQ -1
 #define SCROLLER_AVALLON_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SCROLLER_AVALLON_0_NAME "/dev/scroller_avallon_0"
-#define SCROLLER_AVALLON_0_SPAN 128
+#define SCROLLER_AVALLON_0_SPAN 256
 #define SCROLLER_AVALLON_0_TYPE "scroller_avallon"
 
 
@@ -486,7 +486,7 @@
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1769799999
+#define SYSID_QSYS_0_TIMESTAMP 1770057383
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 

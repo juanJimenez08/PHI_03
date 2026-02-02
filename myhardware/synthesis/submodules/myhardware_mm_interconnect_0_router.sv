@@ -1,4 +1,4 @@
-// (C) 2001-2024 Intel Corporation. All rights reserved.
+// (C) 2001-2023 Intel Corporation. All rights reserved.
 // Your use of Intel Corporation's design tools, logic functions and other 
 // software and tools, and its AMPP partner logic functions, and any output 
 // files from any of the foregoing (including device programming or simulation 
@@ -134,7 +134,7 @@ module myhardware_mm_interconnect_0_router
     // Figure out the number of bits to mask off for each slave span
     // during address decoding
     // -------------------------------------------------------
-    localparam PAD0 = log2ceil(64'h80 - 64'h0); 
+    localparam PAD0 = log2ceil(64'h100 - 64'h0); 
     localparam PAD1 = log2ceil(64'h10000 - 64'h8000); 
     localparam PAD2 = log2ceil(64'h11000 - 64'h10800); 
     localparam PAD3 = log2ceil(64'h11020 - 64'h11000); 
@@ -209,7 +209,7 @@ module myhardware_mm_interconnect_0_router
         // Sets the channel and destination ID based on the address
         // --------------------------------------------------
 
-    // ( 0x0 .. 0x80 )
+    // ( 0x0 .. 0x100 )
     if ( {address[RG:PAD0],{PAD0{1'b0}}} == 17'h0  && write_transaction  ) begin
             src_channel = 15'b000000000000010;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 10;

@@ -191,8 +191,8 @@ altera_avalon_uart_write(altera_avalon_uart_state* sp, const char* ptr, int len,
 
           ALT_FLAG_PEND (sp->events, 
                          ALT_UART_WRITE_RDY,
-                         ALT_FLAG_WAIT_SET_ANY_WITH_CONSUME,
-                         ALT_FLAG_WAIT_MAX_TIMEOUT);
+                         OS_FLAG_WAIT_SET_ANY + OS_FLAG_CONSUME,
+                         0);
         }
         while ((next == sp->tx_start));
       }

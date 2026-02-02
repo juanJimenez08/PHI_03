@@ -204,8 +204,8 @@ altera_avalon_uart_read(altera_avalon_uart_state* sp, char* ptr, int len,
 
        ALT_FLAG_PEND (sp->events, 
                       ALT_UART_READ_RDY,
-                      ALT_FLAG_WAIT_SET_ANY_WITH_CONSUME,
-                      ALT_FLAG_WAIT_MAX_TIMEOUT);
+                      OS_FLAG_WAIT_SET_ANY + OS_FLAG_CONSUME,
+                      0);
       }
     }
   }

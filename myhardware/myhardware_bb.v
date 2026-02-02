@@ -10,6 +10,7 @@ module myhardware (
 	leds_export,
 	meu_display_con_buttons,
 	meu_display_con_hex_out,
+	meu_display_chave,
 	reset_reset_n,
 	spi_0_MISO,
 	spi_0_MOSI,
@@ -28,6 +29,7 @@ module myhardware (
 	output	[9:0]	leds_export;
 	input	[2:0]	meu_display_con_buttons;
 	output	[41:0]	meu_display_con_hex_out;
+	input		meu_display_chave;
 	input		reset_reset_n;
 	input		spi_0_MISO;
 	output		spi_0_MOSI;

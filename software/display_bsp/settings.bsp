@@ -2,12 +2,12 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>30/01/2026 16:16:58</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1769800618911</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>C:\Users\juane\OneDrive\Documentos\QUARTUS\PROJETO_3_PHI\software\display_bsp</BspGeneratedLocation>
-        <BspSettingsFile>.\settings.bsp</BspSettingsFile>
-        <SopcDesignFile>C:\Users\juane\OneDrive\Documentos\QUARTUS\PROJETO_3_PHI\myhardware.sopcinfo</SopcDesignFile>
-        <SystemFileHash>f727827f9f386b71d44451296310547e272fd888e2124182448fac888f65c1fb</SystemFileHash>
+        <BspGeneratedTimeStamp>Feb 2, 2026 4:17:34 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1770059854284</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>/home/sheetpng/PHI_03/software/display_bsp</BspGeneratedLocation>
+        <BspSettingsFile>./settings.bsp</BspSettingsFile>
+        <SopcDesignFile>../../myhardware.sopcinfo</SopcDesignFile>
+        <SystemFileHash>82d97cf5264e7abb884336cf5134639e9d1769487370ab7afcb3607d61d81a0</SystemFileHash>
         <JdiFile>default</JdiFile>
         <Cpu>nios2_gen2_0</Cpu>
         <SchemaVersion>1.9</SchemaVersion>
@@ -387,7 +387,7 @@
                 <SettingName>hal.make.bsp_cflags_optimization</SettingName>
                 <Identifier>BSP_CFLAGS_OPTIMIZATION</Identifier>
                 <Type>UnquotedString</Type>
-                <Value>'-Os'</Value>
+                <Value>-Os</Value>
                 <DefaultValue>-O0</DefaultValue>
                 <DestinationFile>makefile_variable</DestinationFile>
                 <Description>C/C++ compiler optimization level. "-O0" = no optimization,"-O2" = "normal" optimization, etc. "-O0" is recommended for code that you want to debug since compiler optimization can remove variables and produce non-sequential execution of code while debugging. This setting defines the value of BSP_CFLAGS_OPTIMIZATION in Makefile.</Description>
@@ -925,8 +925,8 @@
         </Setting>
         <MemoryMap>
                 <slaveDescriptor>scroller_avallon_0</slaveDescriptor>
-                <addressRange>0x00000000 - 0x0000007F</addressRange>
-                <addressSpan>128</addressSpan>
+                <addressRange>0x00000000 - 0x000000FF</addressRange>
+                <addressSpan>256</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
