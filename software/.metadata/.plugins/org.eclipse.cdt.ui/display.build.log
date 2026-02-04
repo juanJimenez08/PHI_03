@@ -1,0 +1,9 @@
+09:12:24 **** Incremental Build of configuration Nios II for project display ****
+wsl make all 
+Info: Building /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PHI_03/software/display_bsp/
+make --no-print-directory -C /mnt/c/Users/juane/OneDrive/Documentos/QUARTUS/PHI_03/software/display_bsp/
+[BSP build complete]
+[display build complete]
+
+09:12:29 Build Finished (took 4s.878ms)
+

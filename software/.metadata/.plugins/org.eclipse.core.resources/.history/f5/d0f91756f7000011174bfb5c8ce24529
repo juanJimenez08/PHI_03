@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <unistd.h>
+#include "system.h"
+#include "io.h"
+
+// =================================================================
+// DEFINIÇÕES DO SISTEMA
+// =================================================================
+// Tente encontrar o nome base no system.h.
+// Geralmente é SCROLLER_AVALON_0_BASE ou similar.
+#ifndef MEU_DISPLAY_BASE
+#define MEU_DISPLAY_BASE SCROLLER_AVALLON_0_BASE
+#endif
+
+#define ADDR_TEXT_START  0   // Endereços 0 a 31
+#define ADDR_CTRL_REG    32  // Endereço 32: Controle (Bit 0 = Pause)
+#define ADDR_SPEED_REG   33  // Endereço 33: Velocidade Inicial
+
+int main()
+{
+    printf("\n=== INICIANDO CONFIGURAÇÃO DO SCROLLER ===\n");
+
+
+    int velocidade_inicial = 5000000;
+
+
+    IOWR(MEU_DISPLAY_BASE, ADDR_SPEED_REG, velocidade_inicial);
+    IOWR(MEU_DISPLAY_BASE, ADDR_CTRL_REG, 0);
+    char frase[32] = "UFPA 2026";
+    int i;
+    for(i = 0; i < 32; i++) {
+        IOWR(MEU_DISPLAY_BASE, ADDR_TEXT_START + i, frase[i]);
+    }
+
+    printf("\n--- CONFIGURAÇÃO FINALIZADA ---\n");
+    printf("A partir de agora, o hardware (VHDL) controla tudo.\n");
+    printf("TESTE OS CONTROLES FISICOS:\n");
+    printf("[SW 0] -> Enable Geral (Se estiver OFF, nada aparece!)\n");
+    printf("[KEY 1] -> Pausa/Play\n");
+    printf("[KEY 2] -> Acelera\n");
+    printf("[KEY 3] -> Desacelera\n");
+
+    // Loop infinito para o processador não "morrer"
+    while(1) {
+        // O processador fica livre! O display roda sozinho no hardware.
+    }
+
+    return 0;
+}

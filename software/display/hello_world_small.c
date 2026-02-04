@@ -4,68 +4,54 @@
 #include "io.h"
 
 // =================================================================
-// DEFINI√á√ïES DO SISTEMA
+// DEFINI«’ES DO SISTEMA
 // =================================================================
 // Tente encontrar o nome base no system.h.
-// Geralmente √© SCROLLER_AVALON_0_BASE ou similar.
+// Geralmente È SCROLLER_AVALON_0_BASE ou similar.
 #ifndef MEU_DISPLAY_BASE
 #define MEU_DISPLAY_BASE SCROLLER_AVALLON_0_BASE
 #endif
 
-// Mapa de Mem√≥ria (Offsets em Palavras/Words de 32 bits)
-#define ADDR_TEXT_START  0   // Endere√ßos 0 a 31
-#define ADDR_CTRL_REG    32  // Endere√ßo 32: Controle (Bit 0 = Pause)
-#define ADDR_SPEED_REG   33  // Endere√ßo 33: Velocidade Inicial
+#define ADDR_TEXT_START  0   // EndereÁos 0 a 31
+#define ADDR_CTRL_REG    32  // EndereÁo 32: Controle (Bit 0 = Pause)
+#define ADDR_SPEED_REG   33  // EndereÁo 33: Velocidade Inicial
 
 int main()
 {
-    printf("\n=== INICIANDO CONFIGURA√á√ÉO DO SCROLLER ===\n");
+    printf("\n=== INICIANDO CONFIGURA«√O DO SCROLLER ===\n");
 
-    // ---------------------------------------------------------
-    // 1. CONFIGURAR VELOCIDADE (Endere√ßo 33)
-    // ---------------------------------------------------------
-    // O clock √© 50MHz.
-    // 10.000.000 = 0.2 segundos por movimento (R√°pido)
-    // 25.000.000 = 0.5 segundos por movimento (M√©dio)
-    int velocidade_inicial = 5000000; // Bem r√°pido
 
-    printf("1. Configurando velocidade para: %d ciclos\n", velocidade_inicial);
-    // Usamos IOWR (Write Word) -> O hardware mapeia isso para o endere√ßo 33
+    int velocidade_inicial = 5000000;
+
+
     IOWR(MEU_DISPLAY_BASE, ADDR_SPEED_REG, velocidade_inicial);
-
-
-    // ---------------------------------------------------------
-    // 2. CONFIGURAR ESTADO (Endere√ßo 32)
-    // ---------------------------------------------------------
-    // Escrever 0 = Rodando
-    // Escrever 1 = Pausado
-    printf("2. Estado Inicial: RODANDO (Play)\n");
     IOWR(MEU_DISPLAY_BASE, ADDR_CTRL_REG, 0);
-
-
-    // ---------------------------------------------------------
-    // 3. ENVIAR A FRASE (Endere√ßos 0 a 31)
-    // ---------------------------------------------------------
-    char frase[32] = "SETUP PELO NIOS: SUCESSO! 123   ";
-    // (Lembre-se: use exatamente 32 caracteres ou preencha com espa√ßos)
-
-    printf("3. Enviando frase para a memoria do FPGA...\n");
+    char frase[32] = "UFPA 2026 123 456";
     int i;
     for(i = 0; i < 32; i++) {
-        // Escreve caractere por caractere
         IOWR(MEU_DISPLAY_BASE, ADDR_TEXT_START + i, frase[i]);
     }
 
-    printf("\n--- CONFIGURA√á√ÉO FINALIZADA ---\n");
+    printf("\n--- CONFIGURA«√O FINALIZADA ---\n");
     printf("A partir de agora, o hardware (VHDL) controla tudo.\n");
     printf("TESTE OS CONTROLES FISICOS:\n");
     printf("[SW 0] -> Enable Geral (Se estiver OFF, nada aparece!)\n");
     printf("[KEY 1] -> Pausa/Play\n");
     printf("[KEY 2] -> Acelera\n");
     printf("[KEY 3] -> Desacelera\n");
+    usleep(10000000);
 
-    // Loop infinito para o processador n√£o "morrer"
+    IOWR(MEU_DISPLAY_BASE, ADDR_CTRL_REG, 1);
+    usleep(10000000);
+    IOWR(MEU_DISPLAY_BASE, ADDR_CTRL_REG, 0);
+
+    // Loop infinito para o processador n„o "morrer"
     while(1) {
+    	usleep(10000000);
+
+    	    IOWR(MEU_DISPLAY_BASE, ADDR_CTRL_REG, 1);
+    	    usleep(10000000);
+    	    IOWR(MEU_DISPLAY_BASE, ADDR_CTRL_REG, 0);
         // O processador fica livre! O display roda sozinho no hardware.
     }
 

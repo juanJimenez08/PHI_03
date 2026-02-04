@@ -9,11 +9,7 @@ entity scroller_avalon is
         reset           : in  std_logic;
         avs_write       : in  std_logic;
         avs_writedata   : in  std_logic_vector(31 downto 0);
-        -- MUDANÇA: Endereço agora tem 6 bits (0..63) para caber os registradores extras
         avs_address     : in  std_logic_vector(5 downto 0); 
-
-        -- Interface Externa (Conduit - Vai para os pinos do FPGA)
-        -- MUDANÇA: Adicionado o Switch Enable
         con_switch      : in  std_logic;                    -- Switch 0 (Enable Geral)
         con_buttons     : in  std_logic_vector(2 downto 0); -- Botões (Speed/Pause)
         con_hex_out     : out std_logic_vector(41 downto 0) -- 6 displays
@@ -31,7 +27,7 @@ architecture struct of scroller_avalon is
     signal write_enable_ctrl  : std_logic;
     signal write_enable_speed : std_logic;
 
-    -- Componente de Controle (Atualizado)
+    -- Componente de Controle 
     component bloco_controle is
         port (
             clk : in std_logic; reset : in std_logic;
@@ -44,7 +40,7 @@ architecture struct of scroller_avalon is
         );
     end component;
 
-    -- Componente Operacional (Atualizado)
+    -- Componente Operacional 
     component bloco_operacional is
         port (
             clk : in std_logic; reset : in std_logic;

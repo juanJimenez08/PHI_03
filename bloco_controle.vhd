@@ -8,92 +8,95 @@ entity bloco_controle is
         reset         : in  std_logic;
         
         -- HARDWARE INTERFACE (Botões e Switch Físicos)
-        switch_enable : in  std_logic;                    -- Switch 0: Master Enable
-        buttons       : in  std_logic_vector(2 downto 0); -- Btn 0, 1, 2
+        switch_enable : in  std_logic;                    -- Switch 0: Liga/Desliga a tela (Standby)
+        buttons       : in  std_logic_vector(2 downto 0); -- Btn 0 (Pause), 1 (Faster), 2 (Slower)
         
         -- SOFTWARE INTERFACE (Vem do C via Avalon)
-        wr_speed_en   : in  std_logic;                    -- C quer mudar a velocidade?
-        new_speed_val : in  integer;                      -- Novo valor de velocidade do C
-        wr_ctrl_en    : in  std_logic;                    -- C quer mudar o controle (Pause)?
-        new_paused    : in  std_logic;                    -- Novo estado de pause do C
+        wr_speed_en   : in  std_logic;                    -- Enable escrita velocidade
+        new_speed_val : in  integer;                      -- Valor velocidade
+        wr_ctrl_en    : in  std_logic;                    -- Enable escrita controle
+        new_paused    : in  std_logic;                    -- Valor pause
         
         -- SAÍDAS PARA O OPERACIONAL
-        current_index : out integer range 0 to 31;
-        system_on     : out std_logic                     -- Avisa o operacional se deve ligar os displays
+        current_index : out integer range 0 to 31;        -- Qual letra mostrar
+        system_on     : out std_logic                     -- Se '0', apaga os displays
     );
 end entity bloco_controle;
 
 architecture rtl of bloco_controle is
-    -- Valores padrão iniciais (podem ser sobrescritos pelo C)
+    -- Configuração Padrão 
+    constant DEFAULT_SPEED : integer := 10000000;
+    
+    -- Sinais internos (Registradores)
     signal speed_counter : integer range 0 to 50000000 := 0;
-    signal speed_limit   : integer := 10000000; 
+    signal speed_limit   : integer := DEFAULT_SPEED; 
     signal scroll_idx    : integer range 0 to 31 := 0;
     signal is_paused     : std_logic := '0';
     
-    -- Detectores de borda
+    -- Detectores de borda para os botões
     signal btn_prev      : std_logic_vector(2 downto 0) := "111";
 begin
 
-    -- Saída de status para o bloco operacional apagar os displays se Switch=0
+    -- Avisa o bloco operacional para desligar os LEDs se o switch estiver OFF
     system_on <= switch_enable;
 
     process(clk)
     begin
         if rising_edge(clk) then
-            -- 1. MASTER RESET (Switch 0 desligado ou Reset do sistema)
-            -- Se o switch estiver OFF, reseta tudo e fica parado.
-            if reset = '1' or switch_enable = '0' then
+            
+           
+            if reset = '1' then
                 speed_counter <= 0;
-                scroll_idx    <= 0;
+                scroll_idx    <= 0;            -- Volta frase pro início
+                speed_limit   <= DEFAULT_SPEED; -- Reseta velocidade
+                is_paused     <= '0';          -- Tira do pause
+            
+          
+            elsif switch_enable = '0' then
+               
+                speed_counter <= 0;
                 
-                -- Se foi apenas o Switch que desligou, mantemos as configurações de velocidade
-                -- Mas se foi RESET geral, voltamos ao padrão de fábrica
-                if reset = '1' then
-                    speed_limit <= 10000000;
-                    is_paused   <= '0';
-                end if;
-                
+              
             else
-                -- 2. ESCRITA DO SOFTWARE (C) - Setup Inicial ou Ajuste
-                -- Se o C mandou uma nova velocidade, atualizamos agora
+                
                 if wr_speed_en = '1' then
                     speed_limit <= new_speed_val;
                 end if;
                 
-                -- Se o C mandou pausar/despausar logicamente
                 if wr_ctrl_en = '1' then
                     is_paused <= new_paused;
                 end if;
 
-                -- 3. INTERAÇÃO DOS BOTÕES (Hardware Override)
-                -- Botão 0: Pause (Inverte o estado atual, seja ele vindo do C ou não)
+                
+                -- Botão 0: Pause/Play (Toggle)
                 if buttons(0) = '0' and btn_prev(0) = '1' then 
                     is_paused <= not is_paused; 
                 end if;
                 
-                -- Botão 1: Acelera (Diminui o limite)
+                -- Botão 1: Acelerar (Menor limite = Mais rápido)
                 if buttons(1) = '0' and btn_prev(1) = '1' then
-                    if speed_limit > 1000000 then -- Limite mínimo de segurança
+                    if speed_limit > 1000000 then -- Trava mínima (segurança)
                         speed_limit <= speed_limit - 1000000; 
                     end if;
                 end if;
                 
-                -- Botão 2: Desacelera (Aumenta o limite)
+                -- Botão 2: Desacelerar (Maior limite = Mais lento)
                 if buttons(2) = '0' and btn_prev(2) = '1' then
-                    if speed_limit < 45000000 then 
+                    if speed_limit < 45000000 then -- Trava máxima
                         speed_limit <= speed_limit + 1000000; 
                     end if;
                 end if;
                 
-                -- Atualiza estado anterior dos botões
+                -- Atualiza estado anterior dos botões (para detectar borda)
                 btn_prev <= buttons;
 
-                -- 4. CORE LÓGICO (O Scroll)
+                -- C. Lógica do Scroll (Só anda se não estiver pausado)
                 if is_paused = '0' then
                     if speed_counter < speed_limit then
                         speed_counter <= speed_counter + 1;
                     else
                         speed_counter <= 0;
+                        -- Avança a letra (Circular 0..31)
                         if scroll_idx < 31 then 
                             scroll_idx <= scroll_idx + 1;
                         else 
@@ -102,9 +105,10 @@ begin
                     end if;
                 end if;
                 
-            end if; -- Fim do check do Switch/Reset
+            end if; 
         end if; -- Fim do Clock
     end process;
+    
     
     current_index <= scroll_idx;
     

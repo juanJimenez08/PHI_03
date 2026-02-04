@@ -7,16 +7,16 @@ entity bloco_operacional is
         clk         : in  std_logic;
         reset       : in  std_logic;
         
-        -- Interface de Escrita da Memória (Vem do C/Avalon)
+        -- Interface de Escrita da Memória 
         wr_en       : in  std_logic;
         wr_addr     : in  std_logic_vector(5 downto 0); -- Endereço de 6 bits
         wr_data     : in  std_logic_vector(31 downto 0); 
         
-        -- Interface de Leitura (Vem do Controle)
+        -- Interface de Leitura 
         start_index : in  integer range 0 to 31;
-        system_on   : in  std_logic; -- Se '0', apaga tudo (Switch 0 OFF)
+        system_on   : in  std_logic; 
         
-        -- Saída para o Mundo
+       --saida
         hex_output  : out std_logic_vector(41 downto 0)
     );
 end entity bloco_operacional;
@@ -27,7 +27,7 @@ architecture rtl of bloco_operacional is
     type ram_type is array (0 to 31) of std_logic_vector(7 downto 0);
     signal ram : ram_type := (others => x"20"); -- Inicia com espaços
 
-    -- Função de Decodificação Completa (Números + Letras Maiúsculas/Minúsculas)
+    
     function char_to_seg(char : std_logic_vector(7 downto 0)) return std_logic_vector is
         variable seg : std_logic_vector(6 downto 0);
         variable char_int : integer;
@@ -114,7 +114,7 @@ begin
             hex_output(13 downto 7)  <= char_to_seg(ram((start_index + 4) mod 32));
             hex_output(6 downto 0)   <= char_to_seg(ram((start_index + 5) mod 32));
         else
-            -- Desligado (Switch OFF) -> Apaga tudo (1111111 para anodo comum)
+            -- Desligado (Switch OFF) 
             hex_output <= (others => '1');
         end if;
     end process;

@@ -2,9 +2,9 @@
  * system.h - SOPC Builder system and BSP software package information
  *
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'myhardware'
- * SOPC Builder design path: ../../myhardware.sopcinfo
+ * SOPC Builder design path: c:/Users/juane/OneDrive/Documentos/QUARTUS/PHI_03/myhardware.sopcinfo
  *
- * Generated: Mon Feb 02 16:17:34 BRT 2026
+ * Generated: Mon Feb 02 18:14:44 BRT 2026
  */
 
 /*
@@ -486,7 +486,7 @@
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1770057383
+#define SYSID_QSYS_0_TIMESTAMP 1770066325
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 

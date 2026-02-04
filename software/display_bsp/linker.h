@@ -2,9 +2,9 @@
  * linker.h - Linker script mapping information
  *
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'myhardware'
- * SOPC Builder design path: ../../myhardware.sopcinfo
+ * SOPC Builder design path: c:/Users/juane/OneDrive/Documentos/QUARTUS/PHI_03/myhardware.sopcinfo
  *
- * Generated: Mon Feb 02 16:17:34 BRT 2026
+ * Generated: Mon Feb 02 18:14:44 BRT 2026
  */
 
 /*

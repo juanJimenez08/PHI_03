@@ -6,8 +6,6 @@ entity hardware is
         CLOCK_50 : in std_logic;
         KEY      : in std_logic_vector(3 downto 0);
         LEDR     : out std_logic_vector(9 downto 0);
-        
-        -- ADICIONADO: Switches da placa (Necessário para o Enable)
         SW       : in std_logic_vector(9 downto 0); 
         
         -- Hex Displays
@@ -32,7 +30,7 @@ end entity hardware;
 
 architecture rtl of hardware is
 
-    -- Declaração do componente gerado pelo Qsys
+    
     component myhardware is
         port (
             clk_clk                 : in  std_logic := 'X'; 
@@ -47,8 +45,7 @@ architecture rtl of hardware is
             uart_0_txd              : out std_logic;        
             leds_export             : out std_logic_vector(9 downto 0);
 
-            -- SEU PERIFÉRICO CUSTOMIZADO
-            -- O nome "meu_display_chave" vem da exportação "meu_display" + signal type "chave"
+           
             meu_display_con_hex_out : out std_logic_vector(41 downto 0);
             meu_display_con_buttons : in  std_logic_vector(2 downto 0);
             meu_display_chave       : in  std_logic := 'X'  -- A nova porta do Switch
@@ -74,14 +71,12 @@ begin
             uart_0_rxd              => UART_RX,    
             uart_0_txd              => UART_TX,     
 
-            -- CONEXÕES DO SCROLLER
-            -- Botões físicos KEY3, KEY2 e KEY1 controlam velocidade/pause (se o switch deixar)
             meu_display_con_buttons => KEY(3 downto 1),
             
             -- Vetor de saída para os displays
             meu_display_con_hex_out => hex_full_vector,
             
-            -- O NOVO SWITCH (Enable Geral)
+      
             meu_display_chave       => SW(0)
         );
 

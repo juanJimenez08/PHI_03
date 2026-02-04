@@ -4,7 +4,7 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 2023  Intel Corporation. All rights reserved.
+Copyright (C) 2024  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -181,7 +181,7 @@ https://fpgasoftware.intel.com/eula.
 		(text "uart_0" (rect 139 563 314 1139)(font "Arial" (color 128 0 0)(font_size 9)))
 		(text "rxd" (rect 181 587 380 1184)(font "Arial" (color 0 0 0)))
 		(text "txd" (rect 181 603 380 1216)(font "Arial" (color 0 0 0)))
-		(text " system " (rect 397 624 842 1258)(font "Arial" ))
+		(text " myhardware " (rect 376 624 824 1258)(font "Arial" ))
 		(line (pt 176 32)(pt 256 32)(line_width 1))
 		(line (pt 256 32)(pt 256 624)(line_width 1))
 		(line (pt 176 624)(pt 256 624)(line_width 1))
